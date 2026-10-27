@@ -32,11 +32,16 @@ class FormField(BaseModel):
     profile_key: ProfileKey | None = None
     page: int = 0
     occurrence: int = 0  # which match of `label` on the page (0 = first)
-    mode: Literal["after_label", "boxes", "date_parts", "acroform"] = "after_label"
+    mode: Literal["after_label", "boxes", "date_parts", "choice", "acroform"] = "after_label"
+    separators: list[str] = ["/", "/"]  # date_parts: printed words between day, month, year
+    choices: dict[str, str] | None = None  # choice: value -> printed option to tick
+    uppercase: bool = False  # the form asks for capital letters
+    extra_profile_keys: list[ProfileKey] = []  # joined with " / " (e.g. phone / email)
     widget: str | None = None  # AcroForm field name, for mode="acroform"
     max_chars: int | None = None
     x_offset: float = 0  # extra space after the label (e.g. a superscript note marker)
     font_size: float | None = None  # for lines printed smaller than usual
+    from_procedure_title: bool = False  # prefill with the official title of the procedure
     below_x: float | None = None  # dotted line is on the next line, starting at this x (pt)
 
 

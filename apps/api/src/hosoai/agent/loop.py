@@ -23,6 +23,7 @@ from typing import Any, Literal
 from pydantic import BaseModel, Field
 
 from hosoai.agent.matcher import match_procedure
+from hosoai.forms.models import FormSummary
 from hosoai.llm import ChatMessage, LLMClient
 from hosoai.procedures.models import Procedure, RequiredDocument
 from hosoai.procedures.store import ProcedureStore, ProcedureSummary
@@ -91,6 +92,7 @@ class Dossier(BaseModel):
     procedure: Procedure
     documents: list[DossierDocument]
     answers: list[QA]
+    forms: list[FormSummary] = Field(default_factory=list)  # official forms we can fill
 
 
 class AgentReply(BaseModel):

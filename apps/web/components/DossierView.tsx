@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
+import { formHref } from "@/lib/api";
 import { citesOtherPage, groupDossier } from "@/lib/format";
 import type { Dossier, DossierDocument, Source } from "@/lib/types";
 
@@ -26,6 +27,27 @@ export function DossierView({ dossier }: { dossier: Dossier }) {
       <p className="text-muted">Hồ sơ của bạn cho thủ tục</p>
       <h2 className="mt-1 font-serif text-2xl font-semibold leading-snug sm:text-3xl">{p.title}</h2>
       <SourceNote source={p.source} />
+
+      {dossier.forms.length > 0 && (
+        <section className="mt-8 rounded-sm bg-sheet px-5 py-4 shadow-[0_1px_0_var(--rule)]">
+          <h3 className="font-semibold">Tờ khai cần điền</h3>
+          <p className="text-sm text-muted">
+            Điền sẵn từ hồ sơ cá nhân của bạn. Bạn kiểm tra rồi tải về để in, ký và nộp.
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {dossier.forms.map((f) => (
+              <li key={f.id}>
+                <Link
+                  href={formHref(f.id, p.slug)}
+                  className="inline-block rounded-sm bg-pen px-4 py-2 font-semibold text-sheet"
+                >
+                  Điền tờ khai {f.code}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <Group
         title="Cần chuẩn bị"

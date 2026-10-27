@@ -5,22 +5,27 @@ import { notFound } from "next/navigation";
 import { FormFiller } from "@/components/FormFiller";
 import { getForm } from "@/lib/api";
 
-type Props = { params: Promise<{ id: string }> };
+type Props = {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ procedure?: string }>;
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = await getForm((await params).id);
   return { title: d ? `Điền ${d.spec.code} | Hồ Sơ AI` : "Hồ Sơ AI" };
 }
 
-export default async function FormPage({ params }: Props) {
-  const detail = await getForm((await params).id);
+export default async function FormPage({ params, searchParams }: Props) {
+  const { procedure } = await searchParams;
+  const detail = await getForm((await params).id, procedure);
   if (!detail) notFound();
   const { spec } = detail;
+  const back = procedure && spec.procedure_slugs.includes(procedure) ? procedure : spec.procedure_slugs[0];
   return (
     <main className="mx-auto max-w-6xl px-4 sm:px-6">
-      {spec.procedure_slugs[0] && (
+      {back && (
         <Link
-          href={`/procedure/${spec.procedure_slugs[0]}`}
+          href={`/procedure/${back}`}
           className="mt-8 inline-block text-sm text-muted hover:text-pen"
         >
           Quay lại thủ tục

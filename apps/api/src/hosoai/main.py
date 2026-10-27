@@ -78,6 +78,12 @@ def ask(body: AskRequest, store: Store, llm: LLM) -> MatchResult:
     return match_procedure(body.query, store, llm)
 
 
+def _with_forms(reply: loop.AgentReply, forms: FormRegistry) -> loop.AgentReply:
+    if reply.dossier is not None:
+        reply.dossier.forms = forms.for_procedure(reply.dossier.procedure.slug)
+    return reply
+
+
 class AgentStart(BaseModel):
     query: str = Field(min_length=1, max_length=1000)
 
@@ -88,18 +94,18 @@ class AgentAnswer(BaseModel):
 
 @app.post("/agent")
 def agent_start(
-    body: AgentStart, store: Store, llm: LLM, sessions: Sessions, db: Db
+    body: AgentStart, store: Store, llm: LLM, sessions: Sessions, db: Db, forms: Forms
 ) -> loop.AgentReply:
     """Start a conversation. The agent finds the procedure and may ask a first question."""
     facts = agent_facts(load_profile(db), date.today())
     session = loop.new_session(uuid.uuid4().hex, body.query, facts)
     sessions.put(session)
-    return loop.start(session, store, llm)
+    return _with_forms(loop.start(session, store, llm), forms)
 
 
 @app.post("/agent/{session_id}")
 def agent_answer(
-    session_id: str, body: AgentAnswer, store: Store, llm: LLM, sessions: Sessions
+    session_id: str, body: AgentAnswer, store: Store, llm: LLM, sessions: Sessions, forms: Forms
 ) -> loop.AgentReply:
     """Answer the pending question. Returns the next question or the personal dossier."""
     session = sessions.get(session_id)
@@ -108,7 +114,7 @@ def agent_answer(
     if session.pending is None or session.done:
         raise HTTPException(status_code=409, detail={"code": "no_pending_question"})
     try:
-        return loop.answer(session, body.answer, store, llm)
+        return _with_forms(loop.answer(session, body.answer, store, llm), forms)
     except ValueError as e:
         raise HTTPException(
             status_code=422, detail={"code": "invalid_answer", "message": str(e)}
@@ -149,9 +155,13 @@ def list_forms(forms: Forms) -> list[FormSummary]:
 
 
 @app.get("/forms/{form_id}")
-def get_form(form_id: str, forms: Forms, db: Db) -> FormDetail:
+def get_form(
+    form_id: str, forms: Forms, db: Db, store: Store, procedure: str | None = None
+) -> FormDetail:
+    """Form + values prefilled from the profile (and the procedure's official title)."""
     spec = _form_or_404(forms, form_id)
-    return FormDetail(spec=spec, values=prefill(spec, load_profile(db)))
+    p = store.get(procedure) if procedure in spec.procedure_slugs else None
+    return FormDetail(spec=spec, values=prefill(spec, load_profile(db), p.title if p else None))
 
 
 @app.get("/forms/{form_id}/blank.pdf")

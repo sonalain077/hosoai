@@ -77,9 +77,10 @@ export function listForms(): Promise<FormSummary[]> {
   return request("/forms");
 }
 
-export async function getForm(id: string): Promise<FormDetail | null> {
+export async function getForm(id: string, procedure?: string): Promise<FormDetail | null> {
+  const q = procedure ? `?procedure=${encodeURIComponent(procedure)}` : "";
   try {
-    return await request<FormDetail>(`/forms/${encodeURIComponent(id)}`);
+    return await request<FormDetail>(`/forms/${encodeURIComponent(id)}${q}`);
   } catch (e) {
     if (e instanceof ApiError && e.status === 404) return null;
     throw e;
@@ -114,3 +115,6 @@ export async function fillForm(id: string, values: Record<string, string>): Prom
   if (!resp.ok) throw new ApiError(`fill → ${resp.status}`, resp.status);
   return resp.blob();
 }
+
+export const formHref = (id: string, procedure: string) =>
+  `/forms/${encodeURIComponent(id)}?procedure=${encodeURIComponent(procedure)}`;

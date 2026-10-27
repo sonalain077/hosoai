@@ -2,7 +2,10 @@
   "id": "ct01",
   "code": "CT01",
   "title": "Tờ khai thay đổi thông tin cư trú",
-  "procedure_slugs": ["temporary-residence", "permanent-residence"],
+  "procedure_slugs": [
+    "temporary-residence",
+    "permanent-residence"
+  ],
   "file": "CT01.pdf",
   "original_file": "CT01-official.doc",
   "source": {
@@ -13,21 +16,101 @@
     "retrieved_at": "2026-10-27T08:20:00Z"
   },
   "fields": [
-    {"key": "kinh_gui", "label": "Kính gửi", "x_offset": 12, "hint": "Cơ quan đăng ký cư trú (chú thích 1 trên tờ khai)"},
-    {"key": "full_name", "label": "1. Họ, chữ đệm và tên:", "profile_key": "full_name", "hint": "Full name"},
-    {"key": "date_of_birth", "label": "2. Ngày, tháng, năm sinh:", "profile_key": "date_of_birth", "mode": "date_parts", "font_size": 8, "hint": "dd/mm/yyyy"},
-    {"key": "sex", "label": "3. Giới tính:", "profile_key": "sex", "font_size": 8, "hint": "Nam / Nữ"},
-    {"key": "id_number", "label": "4. Số định danh cá nhân/CMND:", "profile_key": "id_number", "mode": "boxes", "max_chars": 12, "hint": "12 chữ số"},
-    {"key": "phone", "label": "5. Số điện thoại liên hệ:", "profile_key": "phone", "hint": "Phone"},
-    {"key": "email", "label": "6. Email:", "profile_key": "email"},
-    {"key": "permanent_address", "label": "7. Nơi thường trú:", "profile_key": "permanent_address", "hint": "Permanent address"},
-    {"key": "temporary_address", "label": "8. Nơi tạm trú:", "hint": "Temporary address"},
-    {"key": "current_address", "label": "9. Nơi ở hiện tại:", "profile_key": "current_address", "hint": "Where you live now"},
-    {"key": "occupation", "label": "10. Nghề nghiệp,  nơi làm việc:", "profile_key": "occupation", "hint": "Occupation, workplace"},
-    {"key": "head_name", "label": "11. Họ, chữ đệm và tên chủ hộ:", "hint": "Head of household"},
-    {"key": "head_relation", "label": "12. Quan hệ với chủ hộ:", "below_x": 85, "max_chars": 20, "hint": "Your relation to them"},
-    {"key": "head_id", "label": "13. Số định danh cá nhân/CMND của chủ hộ:", "mode": "boxes", "max_chars": 12, "hint": "Their 12-digit ID"},
-    {"key": "request", "label": "14. Nội dung đề nghị", "x_offset": 12, "hint": "Ví dụ trên tờ khai: đăng ký thường trú; đăng ký tạm trú; tách hộ…"}
+    {
+      "key": "kinh_gui",
+      "label": "Kính gửi",
+      "x_offset": 12,
+      "hint": "Cơ quan đăng ký cư trú (chú thích 1 trên tờ khai)"
+    },
+    {
+      "key": "full_name",
+      "label": "1. Họ, chữ đệm và tên:",
+      "profile_key": "full_name",
+      "hint": "Full name"
+    },
+    {
+      "key": "date_of_birth",
+      "label": "2. Ngày, tháng, năm sinh:",
+      "profile_key": "date_of_birth",
+      "mode": "date_parts",
+      "font_size": 8,
+      "hint": "dd/mm/yyyy"
+    },
+    {
+      "key": "sex",
+      "label": "3. Giới tính:",
+      "profile_key": "sex",
+      "font_size": 8,
+      "hint": "Nam / Nữ"
+    },
+    {
+      "key": "id_number",
+      "label": "4. Số định danh cá nhân/CMND:",
+      "profile_key": "id_number",
+      "mode": "boxes",
+      "max_chars": 12,
+      "hint": "12 chữ số"
+    },
+    {
+      "key": "phone",
+      "label": "5. Số điện thoại liên hệ:",
+      "profile_key": "phone",
+      "hint": "Phone"
+    },
+    {
+      "key": "email",
+      "label": "6. Email:",
+      "profile_key": "email"
+    },
+    {
+      "key": "permanent_address",
+      "label": "7. Nơi thường trú:",
+      "profile_key": "permanent_address",
+      "hint": "Permanent address"
+    },
+    {
+      "key": "temporary_address",
+      "label": "8. Nơi tạm trú:",
+      "hint": "Temporary address"
+    },
+    {
+      "key": "current_address",
+      "label": "9. Nơi ở hiện tại:",
+      "profile_key": "current_address",
+      "hint": "Where you live now"
+    },
+    {
+      "key": "occupation",
+      "label": "10. Nghề nghiệp,  nơi làm việc:",
+      "profile_key": "occupation",
+      "hint": "Occupation, workplace"
+    },
+    {
+      "key": "head_name",
+      "label": "11. Họ, chữ đệm và tên chủ hộ:",
+      "hint": "Head of household"
+    },
+    {
+      "key": "head_relation",
+      "label": "12. Quan hệ với chủ hộ:",
+      "below_x": 85,
+      "max_chars": 20,
+      "hint": "Your relation to them"
+    },
+    {
+      "key": "head_id",
+      "label": "13. Số định danh cá nhân/CMND của chủ hộ:",
+      "mode": "boxes",
+      "max_chars": 12,
+      "hint": "Their 12-digit ID"
+    },
+    {
+      "key": "request",
+      "label": "14. Nội dung đề nghị",
+      "x_offset": 12,
+      "hint": "Ví dụ trên tờ khai: đăng ký thường trú; đăng ký tạm trú; tách hộ…",
+      "from_procedure_title": true
+    }
   ],
   "notes": [
     "Mục 15 (thành viên hộ gia đình cùng thay đổi), ngày tháng và chữ ký: điền tay trên bản in.",

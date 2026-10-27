@@ -1,0 +1,43 @@
+{
+  "id": "na5",
+  "code": "NA5",
+  "title": "Tờ khai đề nghị cấp thị thực, gia hạn tạm trú",
+  "procedure_slugs": ["foreigner-stay-extension"],
+  "file": "NA5.pdf",
+  "original_file": "NA5-official.doc",
+  "preview_pages": 2,
+  "source": {
+    "url": "https://dichvucong.bocongan.gov.vn/public_dir/tttl/01/giayto/2022_06/1655667280_Mau-NA5--Don-xin-cap-visa-thi-thuc-Viet-Nam-2.doc",
+    "title": "Tờ khai đề nghị cấp thị thực, gia hạn tạm trú (Mẫu NA5)",
+    "document_number": "Mẫu NA5, Thông tư 04/2015/TT-BCA",
+    "publisher": "Cổng Dịch vụ công - Bộ Công an",
+    "retrieved_at": "2026-10-27T08:13:00Z"
+  },
+  "fields": [
+    {"key": "full_name", "label": "1- Họ tên (chữ in hoa):", "profile_key": "full_name", "uppercase": true, "hint": "Full name, in capital letters"},
+    {"key": "sex", "label": "2- Giới tính:", "profile_key": "sex", "mode": "choice", "choices": {"Nam": "Nam", "Nữ": "Nữ"}, "hint": "Nam (male) / Nữ (female)"},
+    {"key": "date_of_birth", "label": "3- Sinh ngày", "profile_key": "date_of_birth", "mode": "date_parts", "separators": ["tháng", "năm"], "hint": "dd/mm/yyyy"},
+    {"key": "nationality_at_birth", "label": "4- Quốc tịch gốc:", "hint": "Nationality at birth"},
+    {"key": "nationality", "label": "5- Quốc tịch hiện nay:", "profile_key": "nationality", "hint": "Current nationality"},
+    {"key": "occupation", "label": "6- Nghề nghiệp/chức vụ:", "profile_key": "occupation", "hint": "Occupation/position"},
+    {"key": "passport_number", "label": "7- Hộ chiếu/giấy tờ có giá trị đi lại quốc tế số:", "profile_key": "passport_number", "max_chars": 15, "hint": "Passport number"},
+    {"key": "passport_type", "label": "loại (2):", "max_chars": 14, "hint": "Passport type (note 2 on the form)"},
+    {"key": "passport_authority", "label": "Cơ quan cấp:", "max_chars": 24, "hint": "Issuing authority"},
+    {"key": "passport_expiry", "label": "có giá trị đến ngày:", "mode": "date_parts", "hint": "Passport expiry, dd/mm/yyyy"},
+    {"key": "entry_date", "label": "8- Nhập cảnh Việt Nam ngày:", "mode": "date_parts", "hint": "Latest entry into Viet Nam, dd/mm/yyyy"},
+    {"key": "entry_port", "label": "qua cửa khẩu:", "max_chars": 20, "hint": "Entry port"},
+    {"key": "entry_purpose", "label": "Mục đích nhập cảnh:", "hint": "Purpose of entry"},
+    {"key": "permitted_until", "label": "9- Được phép tạm trú đến ngày:", "mode": "date_parts", "hint": "Permitted to remain until, dd/mm/yyyy"},
+    {"key": "address", "label": "Địa chỉ tạm trú tại Việt Nam:", "profile_key": "current_address", "hint": "Temporary address in Viet Nam"},
+    {"key": "contact", "label": "Điện thoại liên hệ/Email", "profile_key": "phone", "extra_profile_keys": ["email"], "x_offset": 2, "hint": "Phone / email"},
+    {"key": "host_name", "label": "1- Tên cơ quan, tổ chức", "below_x": 99, "hint": "Hosting organisation (company, school…)"},
+    {"key": "host_address", "label": "Địa chỉ Address", "hint": "Hosting organisation address"},
+    {"key": "host_contact", "label": "Contact telephone number/Email", "occurrence": 1, "hint": "Hosting organisation phone / email"},
+    {"key": "extend_until", "label": "2- Gia hạn tạm trú đến ngày:", "page": 1, "mode": "date_parts", "hint": "Extend stay until, dd/mm/yyyy"},
+    {"key": "reason", "label": "3- Lý do Reason(s)", "page": 1, "hint": "Reason"}
+  ],
+  "notes": [
+    "Phần thân nhân bảo lãnh (mục II.2), cấp thị thực (mục III.1), trình bày thêm (mục IV), ngày tháng và chữ ký: điền tay trên bản in.",
+    "Đây là mẫu NA5 theo Thông tư 04/2015/TT-BCA, đúng tệp đang đăng trên Cổng Dịch vụ công Bộ Công an cho thủ tục này."
+  ]
+}

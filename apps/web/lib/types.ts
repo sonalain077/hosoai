@@ -75,7 +75,12 @@ export type DossierDocument = {
   because: QA[];
 };
 
-export type Dossier = { procedure: Procedure; documents: DossierDocument[]; answers: QA[] };
+export type Dossier = {
+  procedure: Procedure;
+  documents: DossierDocument[];
+  answers: QA[];
+  forms: FormSummary[]; // official forms we can fill for this procedure
+};
 
 export type AgentReply = {
   session_id: string;

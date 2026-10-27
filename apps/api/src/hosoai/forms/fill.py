@@ -5,7 +5,9 @@ Three ways, picked per field:
 - after_label: text PDF with a printed label followed by a dotted line; write after the label.
 - boxes:       one character per printed box (e.g. the 12-digit ID number). Boxes may be
                drawn as rectangles or as table cells (vertical lines).
-- date_parts:  "dd/mm/yyyy" written around the slashes already printed after the label.
+- date_parts:  "dd/mm/yyyy" written around separators printed after the label
+               ("/" or words like "tháng", "năm").
+- choice:      tick (X) the printed option matching the value, e.g. "Nam" / "Nữ".
 Scanned (image-only) forms would need the vision model to find boxes; none of our forms
 need that yet.
 """
@@ -56,8 +58,39 @@ def _search_normalized(page: pymupdf.Page, label: str) -> list[pymupdf.Rect]:
     return hits
 
 
+def _merge_pieces(rects: list[pymupdf.Rect]) -> list[pymupdf.Rect]:
+    """search_for returns one rect per font run; join the pieces of each match.
+
+    A label like "8- Nhập cảnh" printed in two fonts comes back as two rects side by side.
+    """
+    merged: list[pymupdf.Rect] = []
+    for r in rects:
+        last = merged[-1] if merged else None
+        same_line = last is not None and abs(r.y1 - last.y1) < 3
+        if last is not None and same_line and -1 <= r.x0 - last.x1 < 3:
+            merged[-1] = last | r
+        else:
+            merged.append(pymupdf.Rect(r))
+    return merged
+
+
+def _search(page: pymupdf.Page, text: str) -> list[pymupdf.Rect]:
+    hits = page.search_for(text)
+    return _merge_pieces(hits) if hits else _search_normalized(page, text)
+
+
+def _same_line_after(
+    page: pymupdf.Page, text: str, label: pymupdf.Rect, after_x: float
+) -> list[pymupdf.Rect]:
+    hits = _search(page, text)
+    return sorted(
+        (r for r in hits if abs(r.y1 - label.y1) < 4 and r.x0 >= after_x - 1),
+        key=lambda r: r.x0,
+    )
+
+
 def _label_rect(page: pymupdf.Page, f: FormField) -> pymupdf.Rect:
-    hits = page.search_for(f.label) or _search_normalized(page, f.label)
+    hits = _search(page, f.label)
     if len(hits) <= f.occurrence:
         raise FieldNotFound(f"{f.key}: label {f.label!r} not found on page {f.page}")
     rect: pymupdf.Rect = hits[f.occurrence]
@@ -108,6 +141,8 @@ def fill_pdf(spec: FormSpec, pdf: Path, font: Path, values: dict[str, str]) -> b
         value = (raw or "").strip()
         if f is None or not value:
             continue
+        if f.uppercase:
+            value = value.upper()
         if f.max_chars:
             value = value[: f.max_chars]
         page = doc[f.page]
@@ -130,15 +165,33 @@ def fill_pdf(spec: FormSpec, pdf: Path, font: Path, values: dict[str, str]) -> b
                 (x, y), text, fontsize=size, fontfile=str(font), fontname="vi", color=INK
             )
 
+        if f.mode == "choice":
+            anchor = (f.choices or {}).get(value)
+            if anchor is None:
+                continue  # value isn't one of the printed options: leave the boxes empty
+            hits = _same_line_after(page, anchor, label, label.x1)
+            if not hits:
+                raise FieldNotFound(f"{f.key}: option {anchor!r} not found after label")
+            boxes = _boxes_after(page, hits[0])  # the ☐ is drawn, not a text character
+            if not boxes:
+                raise FieldNotFound(f"{f.key}: no box after option {anchor!r}")
+            box = boxes[0]
+            write(box.x0 + box.width * 0.18, box.y1 - box.height * 0.15, "X")
+            continue
+
         if f.mode == "date_parts":
             parts = value.split("/")
-            slashes = sorted(
-                (r for r in page.search_for("/") if abs(r.y1 - label.y1) < 4 and r.x0 > label.x1),
-                key=lambda r: r.x0,
-            )[:2]
-            if len(parts) != 3 or len(slashes) < 2:
-                raise FieldNotFound(f"{f.key}: expected dd/mm/yyyy and two printed slashes")
-            starts = [label.x1 + f.x_offset, slashes[0].x1 + 2, slashes[1].x1 + 2]
+            seps: list[pymupdf.Rect] = []
+            x = label.x1
+            for sep in f.separators:
+                found = _same_line_after(page, sep, label, x)
+                if not found:
+                    break
+                seps.append(found[0])
+                x = found[0].x1
+            if len(parts) != 3 or len(seps) < 2:
+                raise FieldNotFound(f"{f.key}: expected dd/mm/yyyy and printed {f.separators}")
+            starts = [label.x1 + f.x_offset, seps[0].x1 + 2, seps[1].x1 + 2]
             for x, part in zip(starts, parts, strict=True):
                 write(x + 4, label.y1 - 2, part)
             continue

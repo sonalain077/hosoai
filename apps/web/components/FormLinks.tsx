@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { listForms } from "@/lib/api";
+import { formHref, listForms } from "@/lib/api";
 
 /** Forms we can fill for this procedure. Renders nothing if none (or the API is down). */
 export async function FormLinks({ slug }: { slug: string }) {
@@ -12,7 +12,7 @@ export async function FormLinks({ slug }: { slug: string }) {
       {mine.map((f) => (
         <li key={f.id}>
           <Link
-            href={`/forms/${f.id}`}
+            href={formHref(f.id, slug)}
             className="inline-block rounded-sm bg-pen px-4 py-2 font-semibold text-sheet"
           >
             Điền tờ khai {f.code}

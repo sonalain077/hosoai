@@ -152,3 +152,10 @@ def test_answer_without_pending_question_is_rejected(agent: Callable[..., Any]) 
     body = start("căn cước")
     assert client.post(f"/agent/{body['session_id']}", json={"answer": "x"}).status_code == 409
     assert client.post("/agent/nope", json={"answer": "x"}).status_code == 404
+
+
+def test_dossier_lists_fillable_official_forms(agent: Callable[..., Any]) -> None:
+    agent("tam-tru")
+    body = start("đăng ký tạm trú")
+    assert [f["code"] for f in body["dossier"]["forms"]] == ["CT01"]
+    assert ".gov.vn" in body["dossier"]["forms"][0]["source"]["url"]

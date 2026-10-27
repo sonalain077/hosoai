@@ -159,6 +159,8 @@ def test_real_form_specs_match_their_official_pdfs() -> None:
                 if f.mode == "boxes"
                 else "20/05/1990"
                 if f.mode == "date_parts"
+                else next(iter(f.choices or {"Thử": ""}))
+                if f.mode == "choice"
                 else "Thử"
             )
             for f in spec.fields
@@ -174,3 +176,57 @@ def test_previews_are_png_images(forms_dir: Path) -> None:
     assert filled.status_code == 200 and filled.content.startswith(b"\x89PNG")
     assert filled.content != blank.content
     assert client.get("/forms/test-form/pages/9.png").status_code == 404
+
+
+def test_request_field_prefilled_with_official_procedure_title() -> None:
+    detail = client.get("/forms/ct01?procedure=temporary-residence").json()
+    assert detail["values"]["request"] == "Đăng ký tạm trú"
+    # a procedure the form doesn't belong to is ignored
+    assert client.get("/forms/ct01?procedure=passport").json()["values"]["request"] == ""
+
+
+def _na5() -> tuple[FormSpec, Path]:
+    registry = FormRegistry(Settings().data_dir / "forms")
+    spec = registry.get("na5")
+    assert spec is not None
+    return spec, registry.pdf_path(spec)
+
+
+def _word_after(pdf: bytes, page_no: int, label: str, text: str) -> tuple[float, float]:
+    page = pymupdf.open(stream=pdf, filetype="pdf")[page_no]
+    rect = page.search_for(label)[-1]
+    hits = [w for w in page.get_text("words") if w[4] == text and abs(w[3] - rect.y1) < 6]
+    assert hits, f"{text!r} not on the line of {label!r}"
+    return hits[0][0], rect.x1
+
+
+def test_na5_ticks_the_right_box() -> None:
+    spec, pdf_path = _na5()
+    for value, other in (("Nam", "Nữ"), ("Nữ", "Nam")):
+        pdf = fill_pdf(spec, pdf_path, FONT, {"sex": value})
+        page = pymupdf.open(stream=pdf, filetype="pdf")[0]
+        label = page.search_for("2- Giới tính:")[0]
+        x_mark = next(w for w in page.get_text("words") if w[4] == "X")
+        opt = next(r for r in page.search_for(value) if abs(r.y1 - label.y1) < 4)
+        not_opt = next(r for r in page.search_for(other) if abs(r.y1 - label.y1) < 4)
+        assert opt.x1 <= x_mark[0] <= opt.x1 + 20  # right after the chosen option
+        assert not (not_opt.x1 <= x_mark[0] <= not_opt.x1 + 20)
+
+
+def test_na5_dates_and_split_labels() -> None:
+    spec, pdf_path = _na5()
+    pdf = fill_pdf(
+        spec,
+        pdf_path,
+        FONT,
+        {"date_of_birth": "20/05/1990", "entry_date": "15/08/2026", "reason": "Du lịch"},
+    )
+    # day after "Sinh ngày", month after "tháng", year after "năm"
+    x_day, label_end = _word_after(pdf, 0, "3- Sinh ngày", "20")
+    assert x_day >= label_end
+    # "8- Nhập cảnh…" is printed in two fonts: the day must still come after the whole label
+    x_entry, entry_end = _word_after(pdf, 0, "Nhập cảnh Việt Nam ngày:", "15")
+    assert x_entry >= entry_end
+    # "3- Lý do Reason(s)": italic part included in the label
+    x_reason, reason_end = _word_after(pdf, 1, "Reason(s)", "Du")
+    assert x_reason >= reason_end
