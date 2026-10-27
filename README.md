@@ -31,6 +31,34 @@ These rules are enforced in code and covered by tests. The LLM is not trusted to
 | Minimal personal data to the model | The agent sees only age and nationality from the profile, never names, ID numbers or addresses. |
 | No submission | The app only generates files for download. A test checks that no code path posts to a government host. |
 
+## Evaluation
+
+The evaluation runs on a free local model (`qwen2.5:7b` through Ollama) against a hand-labelled set of **66 requests** in Vietnamese, English, French, Korean and Chinese ([`data/evals/routing.jsonl`](data/evals/routing.jsonl)). The set includes real procedures we do *not* cover, off-topic requests and prompt-injection attempts.
+
+| | Result |
+|---|---|
+| Right procedure, in-scope requests (50) | **95.8–100 %** across runs |
+| Correct "not in official sources" for uncovered or off-topic requests (14) | **13/14**. The one miss routes "set up a limited company" to *household business*. |
+| Prompt-injection attempts resisted | **4/4** |
+| Invented procedures shown to users | **0**. The model invented 0–1 per run; guardrails dropped them. |
+| Model mistakes caught by guardrails in 50 full conversations | **144** (mostly trying to drop a document without any user answer behind it) |
+| Documents shown word-for-word from the official source | **100 %** |
+
+**Plain chatbot vs. Hồ Sơ AI on fees.** Asked directly *"what is the fee for <procedure>?"*, the same model gave a money amount for 13 of the 17 procedures, and **none of the 13 amounts appear in the official source**. It charged 50,000 VND for a first ID card and 100,000–150,000 VND to register a marriage, though both are free according to the official pages. Its passport fee changed between runs (80,000, then 120,000 VND); the official page says 160,000. Hồ Sơ AI shows the official fee text verbatim, or says the source doesn't state it. Some official pages only point to a circular instead of stating an amount, so an amount missing from the source is *unverifiable*, not always wrong.
+
+**What the evaluation caught and we fixed:**
+- **A prompt bug.** The procedure list given to the model was numbered, so it sometimes answered "13" instead of `passport`. In-scope accuracy went from 83 % to 95–100 % once fixed.
+- **Broken official pages.** On four procedures, the fee box of the official page shows processing times ("07 Ngày làm việc") or a bare "1" instead of a fee. Ingestion now detects this. It doesn't show that text as a fee and warns the user, quoting the original.
+
+Run it yourself (calls the configured model, roughly 5 minutes on Ollama):
+
+```bash
+cd apps/api
+uv run python -m hosoai.evals.run            # or --part routing|fees|agent
+```
+
+Results are written to `data/evals/results/<model>-<date>.json` and `.md`. Scoring logic is unit-tested in `tests/test_evals.py`.
+
 ## Coverage
 
 **17 procedures**, parsed from the Bộ Công an public service portal and the Lào Cai provincial portal: passport, ID card (new, exchange, reissue), permanent and temporary residence, criminal record, first vehicle registration, foreigner temporary residence card, foreigner stay extension, birth, death and marriage registration, marital status certificate, certified copies, household business registration and work permits for foreign workers.

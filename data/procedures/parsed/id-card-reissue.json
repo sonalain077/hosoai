@@ -66,16 +66,7 @@
       "retrieved_at": "2026-10-26T10:42:23.898685Z"
     }
   },
-  "fee": {
-    "text": "Phí: Trực tiếp Trực tuyến\nLệ phí: 07 Ngày làm việc\nChưa quy định.\n07 Ngày làm việc\nChưa quy định.",
-    "source": {
-      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
-      "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
-      "document_number": "2.001194",
-      "publisher": "Cổng Dịch vụ công - Bộ Công an",
-      "retrieved_at": "2026-10-26T10:42:23.898685Z"
-    }
-  },
+  "fee": null,
   "documents": [
     {
       "name": "Phiếu thu nhận thông tin căn cước (Mẫu CC01 ban hành kèm theo Thông tư số 17/2024/TT-BCA của Bộ Công an)",
@@ -234,7 +225,9 @@
       }
     }
   ],
-  "warnings": [],
+  "warnings": [
+    "Trang chính thức bị lỗi ở mục phí, lệ phí (mục phí hiển thị thời hạn giải quyết thay vì mức phí): «Phí: Trực tiếp Trực tuyến / Lệ phí: 07 Ngày làm việc / Chưa quy định. / 07 Ngày làm việc / Chưa quy định.». Không xác định được mức phí từ nguồn này; hãy hỏi cơ quan tiếp nhận hồ sơ."
+  ],
   "source": {
     "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
     "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",

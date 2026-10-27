@@ -66,16 +66,7 @@
       "retrieved_at": "2026-10-26T10:42:28.302219Z"
     }
   },
-  "fee": {
-    "text": "Phí: 1\nLệ phí: Không",
-    "source": {
-      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
-      "title": "Đăng ký tạm trú",
-      "document_number": "1.004194",
-      "publisher": "Cổng Dịch vụ công - Bộ Công an",
-      "retrieved_at": "2026-10-26T10:42:28.302219Z"
-    }
-  },
+  "fee": null,
   "documents": [
     {
       "name": "Tờ khai thay đổi thông tin cư trú (Mẫu CT01 ban hành kèm theo Thông tư số 56/2021/TT-BCA); đối với người đăng ký tạm trú là người chưa thành niên thì trong tờ khai phải ghi rõ ý kiến đồng ý của cha, mẹ hoặc người giám hộ, trừ trường hợp đã có ý kiến đồng ý bằng văn bản;",
@@ -246,7 +237,9 @@
       }
     }
   ],
-  "warnings": [],
+  "warnings": [
+    "Trang chính thức bị lỗi ở mục phí, lệ phí (mục phí chỉ ghi một con số, không có đơn vị): «Phí: 1 / Lệ phí: Không». Không xác định được mức phí từ nguồn này; hãy hỏi cơ quan tiếp nhận hồ sơ."
+  ],
   "source": {
     "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
     "title": "Đăng ký tạm trú",

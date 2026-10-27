@@ -76,16 +76,7 @@
       "retrieved_at": "2026-10-26T10:42:59.954607Z"
     }
   },
-  "fee": {
-    "text": "Lệ phí: Trực tiếp - 3 Ngày làm việc\nTrực tuyến - 3 Ngày làm việc\nDịch vụ bưu chính - 3 Ngày làm việc\nPhí: Trực tiếp - 3 Ngày làm việc\nTrực tuyến - 3 Ngày làm việc\nDịch vụ bưu chính - 3 Ngày làm việc",
-    "source": {
-      "url": "https://dichvucong.laocai.gov.vn/trang-chu/tra-cuu/chi-tiet-thu-tuc?ma-thu-tuc=48106",
-      "title": "Đăng ký thành lập hộ kinh doanh",
-      "document_number": "1.001612.000.00.00.H38",
-      "publisher": "Cổng Dịch vụ công tỉnh Lào Cai",
-      "retrieved_at": "2026-10-26T10:42:59.954607Z"
-    }
-  },
+  "fee": null,
   "documents": [
     {
       "name": "Bản sao văn bản ủy quyền của thành viên hộ gia đình cho một thành viên làm chủ hộ kinh doanh đối với trường hợp hộ kinh doanh do các thành viên hộ gia đình đăng ký thành lập. Văn bản ủy quyền này phải được công chứng hoặc chứng thực theo quy định của pháp luật.",
@@ -270,7 +261,8 @@
   },
   "forms": [],
   "warnings": [
-    "Lệ phí theo quy định của tỉnh Lào Cai; mức thu ở tỉnh/thành khác có thể khác. (Fees are Lào Cai's; other provinces may charge differently.)"
+    "Lệ phí theo quy định của tỉnh Lào Cai; mức thu ở tỉnh/thành khác có thể khác. (Fees are Lào Cai's; other provinces may charge differently.)",
+    "Trang chính thức bị lỗi ở mục phí, lệ phí (mục phí hiển thị thời hạn giải quyết thay vì mức phí): «Lệ phí: Trực tiếp - 3 Ngày làm việc / Trực tuyến - 3 Ngày làm việc / Dịch vụ bưu chính - 3 Ngày làm việc / Phí: Trực tiếp - 3 Ngày làm việc / Trực tuyến - 3 Ngà». Không xác định được mức phí từ nguồn này; hãy hỏi cơ quan tiếp nhận hồ sơ."
   ],
   "source": {
     "url": "https://dichvucong.laocai.gov.vn/trang-chu/tra-cuu/chi-tiet-thu-tuc?ma-thu-tuc=48106",

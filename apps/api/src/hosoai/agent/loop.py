@@ -121,6 +121,9 @@ class Session(BaseModel):
     pending: Question | None = None
     answers: list[QA] = Field(default_factory=list)  # answers[0] is the request
     done: bool = False
+    # Guardrail interventions: model mistakes caught before reaching the user.
+    # Event names only (no personal data); used by evals and debugging.
+    events: list[str] = Field(default_factory=list)
 
     @property
     def questions_asked(self) -> int:
@@ -234,6 +237,7 @@ def _run(session: Session, store: ProcedureStore, llm: LLMClient) -> AgentReply:
         raw = llm.chat(session.messages)
         action = _parse_action(raw)
         if action is None:
+            session.events.append("invalid_json")
             session.messages.append(ChatMessage(role="assistant", content=raw[:500]))
             _feedback(session, "Invalid reply. Answer with ONE JSON object with an 'action'.")
             continue
@@ -241,10 +245,12 @@ def _run(session: Session, store: ProcedureStore, llm: LLMClient) -> AgentReply:
 
         if action["action"] == "ask_user":
             if session.questions_asked >= MAX_QUESTIONS:
+                session.events.append("question_limit")
                 _feedback(session, "You have asked enough questions. Reply with finish now.")
                 continue
             question = _question(session, action, p)
             if question is None:
+                session.events.append("malformed_question")
                 _feedback(session, "ask_user needs a 'question' and 2 to 4 'options'.")
                 continue
             session.pending = question
@@ -259,9 +265,11 @@ def _run(session: Session, store: ProcedureStore, llm: LLMClient) -> AgentReply:
                 because if isinstance(because, dict) else {},
             )
 
+        session.events.append("unknown_action")
         _feedback(session, f"Unknown action {action['action']!r}. Use ask_user or finish.")
 
     # The model never settled: show the full official list, nothing excluded.
+    session.events.append("no_decision_fallback")
     return _finish(session, p, {}, {})
 
 
@@ -275,6 +283,7 @@ def _question(session: Session, action: dict[str, Any], p: Procedure) -> Questio
         return None
     about_ids = action.get("about") if isinstance(action.get("about"), list) else []
     ids = {_doc_id(i): d for i, d in enumerate(p.documents)}
+    session.events.extend("invented_doc_id" for i in about_ids or [] if i not in ids)
     about = [DocRef(id=i, name=ids[i].name) for i in dict.fromkeys(about_ids or []) if i in ids]
     return Question(
         number=session.questions_asked + 1, text=text.strip(), options=opts, about=about
@@ -285,15 +294,21 @@ def _finish(
     session: Session, p: Procedure, statuses: dict[str, Any], because: dict[str, Any]
 ) -> AgentReply:
     by_number = {a.number: a for a in session.answers}
+    known = {_doc_id(i) for i in range(len(p.documents))}
+    session.events.extend("invented_doc_id" for k in statuses if k not in known)
     out: list[DossierDocument] = []
     for i, d in enumerate(p.documents):
         doc_id = _doc_id(i)
         status = statuses.get(doc_id)
         if status not in ("needed", "not_needed", "unsure"):
+            if status is not None:
+                session.events.append("invalid_status")
             status = "unsure"
         cited = because.get(doc_id) if isinstance(because.get(doc_id), list) else []
+        session.events.extend("invented_answer_ref" for n in cited or [] if n not in by_number)
         reasons = [by_number[n] for n in dict.fromkeys(cited or []) if n in by_number]
         if status == "not_needed" and not reasons:
+            session.events.append("unsupported_exclusion")
             status = "unsure"  # can't drop a document without the user's own words behind it
         out.append(DossierDocument(id=doc_id, status=status, document=d, because=reasons))
     session.done = True

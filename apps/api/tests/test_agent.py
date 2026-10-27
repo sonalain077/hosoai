@@ -159,3 +159,17 @@ def test_dossier_lists_fillable_official_forms(agent: Callable[..., Any]) -> Non
     body = start("đăng ký tạm trú")
     assert [f["code"] for f in body["dossier"]["forms"]] == ["CT01"]
     assert ".gov.vn" in body["dossier"]["forms"][0]["source"]["url"]
+
+
+def test_guardrail_events_are_recorded() -> None:
+    from hosoai.agent import loop
+    from hosoai.procedures.store import get_store
+
+    fake = FakeLLMClient(FIXTURES / "agent" / "passport-two-questions.json")
+    store = get_store()
+    s = loop.new_session("t", "hộ chiếu")
+    loop.start(s, store, fake)  # question 1 mentions unknown d99
+    loop.answer(s, "Đã đủ 14 tuổi", store, fake)
+    loop.answer(s, "Chưa từng", store, fake)  # finish: invented d42, d2 not_needed w/o reason
+    assert s.events.count("invented_doc_id") == 2
+    assert "unsupported_exclusion" in s.events

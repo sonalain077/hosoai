@@ -22,10 +22,11 @@ NOT_FOUND_MESSAGE = (
 )
 
 SYSTEM_PROMPT = """You route requests about Vietnamese administrative procedures.
-You are given a numbered list of procedures (slug, official Vietnamese title, short English label)
+You are given a list of procedures (slug, official Vietnamese title, short English label)
 and a user request written in any language.
 
 Pick the procedure(s) from the list that the user needs.
+- Answer with the slug text itself (e.g. "passport"), never a number or a title.
 - Only use slugs that appear in the list. Never invent a slug.
 - If one procedure clearly fits, return just that one.
 - If the request fits several (e.g. new vs. replacement ID card), return up to 3, best first.
@@ -42,9 +43,9 @@ class MatchResult(BaseModel):
 
 def _catalog_text(store: ProcedureStore) -> str:
     lines = []
-    for i, p in enumerate(store.list(), 1):
+    for p in store.list():
         label = f" | {p.label_en}" if p.label_en else ""
-        lines.append(f"{i}. {p.slug} | {p.title}{label}")
+        lines.append(f"- {p.slug} | {p.title}{label}")
     return "\n".join(lines)
 
 
@@ -59,7 +60,9 @@ def _parse_slugs(reply: str) -> list[str]:
     slugs = data.get("slugs") if isinstance(data, dict) else None
     if not isinstance(slugs, list):
         return []
-    return [s for s in slugs if isinstance(s, str)]
+    # Tolerate formatting noise ("- passport", " Passport ") but nothing else: the result
+    # must still equal a known slug exactly, or it is dropped by the caller.
+    return [s.strip().strip("-*• ").lower() for s in slugs if isinstance(s, str)]
 
 
 def match_procedure(query: str, store: ProcedureStore, llm: LLMClient) -> MatchResult:

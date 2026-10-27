@@ -24,6 +24,7 @@ from pydantic import BaseModel
 
 from hosoai.procedures.models import Procedure
 from hosoai.settings import Settings
+from hosoai.sources import quality
 from hosoai.sources.models import Source
 from hosoai.sources.parsers import bca, laocai
 from hosoai.sources.parsers.common import ParseError
@@ -132,13 +133,14 @@ def parse_saved(entry: CatalogEntry, catalog: Catalog, data_dir: Path) -> Proced
         )
     meta = RawPage.model_validate_json(meta_path.read_text("utf-8"))
     parse, publisher = PARSERS[entry.source]
-    return parse(
+    procedure = parse(
         html_path.read_text("utf-8"),
         slug=entry.slug,
         url=meta.url,
         source=_source(meta.url, entry, publisher, meta.retrieved_at),
         warnings=[entry.warning] if entry.warning else [],
     )
+    return quality.check(procedure)
 
 
 def run(data_dir: Path, *, offline: bool, only: set[str] | None) -> dict[str, Any]:
