@@ -49,6 +49,7 @@ class CatalogSource(BaseModel):
 class CatalogEntry(BaseModel):
     slug: str
     title_vi: str
+    title_en: str | None = None  # our own short label for matching/navigation, not official text
     source: str
     page_id: str
     warning: str | None = None
