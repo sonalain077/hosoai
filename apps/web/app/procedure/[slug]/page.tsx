@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { DocumentChecklist } from "@/components/DocumentChecklist";
+import { FormLinks } from "@/components/FormLinks";
 import { ItemSource, SourceNote } from "@/components/SourceNote";
 import { getProcedure } from "@/lib/api";
 import { citesOtherPage, stripStepPrefix } from "@/lib/format";
@@ -49,6 +50,7 @@ export default async function ProcedurePage({ params }: Props) {
         )}
       </dl>
       <SourceNote source={p.source} />
+      <FormLinks slug={p.slug} />
 
       {p.warnings.length > 0 && (
         <aside className="mt-8 border-l-4 border-stamp bg-sheet py-3 pl-4 pr-3">

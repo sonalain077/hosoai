@@ -26,9 +26,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="vi">
       <body className={`${ui.variable} ${official.variable} antialiased`}>
-        <header className="mx-auto max-w-3xl px-4 pt-6 sm:px-6">
+        <header className="mx-auto flex max-w-3xl items-baseline justify-between px-4 pt-6 sm:px-6">
           <Link href="/" className="text-lg font-bold tracking-tight">
             Hồ Sơ <span className="text-pen">AI</span>
+          </Link>
+          <Link href="/profile" className="text-sm font-semibold text-muted hover:text-pen">
+            Hồ sơ cá nhân
           </Link>
         </header>
         {children}

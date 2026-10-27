@@ -1,4 +1,12 @@
-import type { AgentReply, MatchResult, Procedure, ProcedureSummary } from "./types";
+import type {
+  AgentReply,
+  FormDetail,
+  FormSummary,
+  MatchResult,
+  Procedure,
+  ProcedureSummary,
+  Profile,
+} from "./types";
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
@@ -51,4 +59,58 @@ export function agentStart(query: string): Promise<AgentReply> {
 
 export function agentAnswer(sessionId: string, answer: string): Promise<AgentReply> {
   return request(`/agent/${encodeURIComponent(sessionId)}`, json({ answer }));
+}
+
+export function getProfile(): Promise<Profile> {
+  return request("/profile");
+}
+
+export function saveProfile(profile: Profile): Promise<Profile> {
+  return request("/profile", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(profile),
+  });
+}
+
+export function listForms(): Promise<FormSummary[]> {
+  return request("/forms");
+}
+
+export async function getForm(id: string): Promise<FormDetail | null> {
+  try {
+    return await request<FormDetail>(`/forms/${encodeURIComponent(id)}`);
+  } catch (e) {
+    if (e instanceof ApiError && e.status === 404) return null;
+    throw e;
+  }
+}
+
+export const blankPageUrl = (id: string, page: number) =>
+  `${API_URL}/forms/${encodeURIComponent(id)}/pages/${page}.png`;
+
+/** Image of one filled page, for review on screen. */
+export async function previewPage(
+  id: string,
+  page: number,
+  values: Record<string, string>,
+): Promise<Blob> {
+  const resp = await fetch(`${API_URL}/forms/${encodeURIComponent(id)}/preview/${page}.png`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ values }),
+  });
+  if (!resp.ok) throw new ApiError(`preview → ${resp.status}`, resp.status);
+  return resp.blob();
+}
+
+/** Builds the filled PDF locally on our server. Nothing is submitted to any authority. */
+export async function fillForm(id: string, values: Record<string, string>): Promise<Blob> {
+  const resp = await fetch(`${API_URL}/forms/${encodeURIComponent(id)}/fill`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ values, reviewed: true }),
+  });
+  if (!resp.ok) throw new ApiError(`fill → ${resp.status}`, resp.status);
+  return resp.blob();
 }

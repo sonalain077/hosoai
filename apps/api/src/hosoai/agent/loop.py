@@ -34,7 +34,9 @@ DOC_PREVIEW_CHARS = 220  # Ollama's default context is small; the model gets a t
 Status = Literal["needed", "not_needed", "unsure"]
 
 SYSTEM_PROMPT = """You help a person in Vietnam prepare the papers for one administrative procedure.
-Below are the person's request (answer 0) and the official list of documents (d1, d2...).
+Below are the person's request (answer 0), maybe facts from their saved profile (answer -1;
+the profile is the user's own, who may be applying for someone else), and the official list
+of documents (d1, d2...).
 Some documents apply only in some cases (age under 14, lost document, applying online,
 someone else applying for them...). Find out which documents apply to this person.
 
@@ -48,7 +50,7 @@ Reply with ONE JSON object and nothing else. Two possible actions:
 {"action": "finish", "documents": {"d1": "needed", "d2": "not_needed"}, "because": {"d2": [1]}}
   Give every document id a status: "needed", "not_needed" or "unsure".
   "because" maps a document id to the answer numbers that justify the status
-  (0 = the request). A "not_needed" document MUST have a "because".
+  (0 = the request, -1 = the profile). A "not_needed" document MUST have a "because".
 
 Never state fees, deadlines or requirements in a question. Ask at most %d questions,
 one at a time. If no document depends on the person's situation, finish right away."""
@@ -73,7 +75,7 @@ class Question(BaseModel):
 
 
 class QA(BaseModel):
-    number: int  # 0 = the original request
+    number: int  # 0 = the original request, -1 = facts from the saved profile
     question: str
     answer: str
 
@@ -123,12 +125,14 @@ class Session(BaseModel):
         return sum(1 for a in self.answers if a.number > 0)
 
 
-def new_session(session_id: str, query: str) -> Session:
-    return Session(
-        id=session_id,
-        query=query,
-        answers=[QA(number=0, question="Yêu cầu ban đầu / Your request", answer=query)],
-    )
+PROFILE_LABEL = "Hồ sơ cá nhân đã lưu / Your saved profile"
+
+
+def new_session(session_id: str, query: str, profile_facts: str | None = None) -> Session:
+    answers = [QA(number=0, question="Yêu cầu ban đầu / Your request", answer=query)]
+    if profile_facts:
+        answers.append(QA(number=-1, question=PROFILE_LABEL, answer=profile_facts))
+    return Session(id=session_id, query=query, answers=answers)
 
 
 def _doc_id(i: int) -> str:
@@ -196,11 +200,10 @@ def _open(session: Session, slug: str, store: ProcedureStore, llm: LLMClient) ->
     if p is None:
         return _not_found(session)
     session.slug = p.slug
+    known = "\n".join(f"Answer {a.number}: {a.answer}" for a in session.answers if a.number <= 0)
     session.messages = [
         ChatMessage(role="system", content=SYSTEM_PROMPT % MAX_QUESTIONS),
-        ChatMessage(
-            role="user", content=f"Answer 0 (the request): {session.query}\n\n{_procedure_view(p)}"
-        ),
+        ChatMessage(role="user", content=f"{known}\n\n{_procedure_view(p)}"),
     ]
     return _run(session, store, llm)
 

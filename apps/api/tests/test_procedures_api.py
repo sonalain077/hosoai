@@ -42,4 +42,4 @@ def test_empty_store_returns_empty_list(tmp_path: Path) -> None:
         assert client.get("/procedures").json() == []
         assert client.get("/procedures/passport").status_code == 404
     finally:
-        app.dependency_overrides.clear()
+        app.dependency_overrides.pop(get_store, None)

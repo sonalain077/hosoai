@@ -1,23 +1,32 @@
 import uuid
+from datetime import date
+from pathlib import Path
 from typing import Annotated
 
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
+from sqlmodel import Session as DbSession
 
 from hosoai.agent import loop
 from hosoai.agent.matcher import MatchResult, match_procedure
 from hosoai.agent.sessions import SessionStore, get_sessions
+from hosoai.forms.fill import FieldNotFound, fill_pdf, render_page_png
+from hosoai.forms.models import FormSpec, FormSummary
+from hosoai.forms.registry import FormRegistry, get_forms, prefill
 from hosoai.llm import LLMClient, OpenAICompatibleClient
 from hosoai.procedures.models import Procedure
 from hosoai.procedures.store import ProcedureStore, ProcedureSummary, get_store
+from hosoai.profile.models import ProfileData, agent_facts
+from hosoai.profile.store import get_db, load_profile, save_profile
 from hosoai.settings import Settings
 
 app = FastAPI(title="Hồ Sơ AI")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=Settings().cors_origins,
-    allow_methods=["GET", "POST"],
+    allow_methods=["GET", "POST", "PUT"],
     allow_headers=["*"],
 )
 
@@ -29,6 +38,8 @@ def get_llm() -> LLMClient:
 Store = Annotated[ProcedureStore, Depends(get_store)]
 LLM = Annotated[LLMClient, Depends(get_llm)]
 Sessions = Annotated[SessionStore, Depends(get_sessions)]
+Db = Annotated[DbSession, Depends(get_db)]
+Forms = Annotated[FormRegistry, Depends(get_forms)]
 
 
 class AskRequest(BaseModel):
@@ -76,9 +87,12 @@ class AgentAnswer(BaseModel):
 
 
 @app.post("/agent")
-def agent_start(body: AgentStart, store: Store, llm: LLM, sessions: Sessions) -> loop.AgentReply:
+def agent_start(
+    body: AgentStart, store: Store, llm: LLM, sessions: Sessions, db: Db
+) -> loop.AgentReply:
     """Start a conversation. The agent finds the procedure and may ask a first question."""
-    session = loop.new_session(uuid.uuid4().hex, body.query)
+    facts = agent_facts(load_profile(db), date.today())
+    session = loop.new_session(uuid.uuid4().hex, body.query, facts)
     sessions.put(session)
     return loop.start(session, store, llm)
 
@@ -99,3 +113,96 @@ def agent_answer(
         raise HTTPException(
             status_code=422, detail={"code": "invalid_answer", "message": str(e)}
         ) from e
+
+
+@app.get("/profile")
+def get_profile(db: Db) -> ProfileData:
+    return load_profile(db)
+
+
+@app.put("/profile")
+def put_profile(body: ProfileData, db: Db) -> ProfileData:
+    """Replace the saved profile. Stored locally only (SQLite); never logged."""
+    return save_profile(db, body)
+
+
+class FormDetail(BaseModel):
+    spec: FormSpec
+    values: dict[str, str]  # prefilled from the saved profile; the user reviews them
+
+
+class FillRequest(BaseModel):
+    values: dict[str, str]
+    reviewed: bool  # the user confirmed they checked every value
+
+
+def _form_or_404(forms: FormRegistry, form_id: str) -> FormSpec:
+    spec = forms.get(form_id)
+    if spec is None:
+        raise HTTPException(status_code=404, detail={"code": "form_not_found"})
+    return spec
+
+
+@app.get("/forms")
+def list_forms(forms: Forms) -> list[FormSummary]:
+    return forms.list()
+
+
+@app.get("/forms/{form_id}")
+def get_form(form_id: str, forms: Forms, db: Db) -> FormDetail:
+    spec = _form_or_404(forms, form_id)
+    return FormDetail(spec=spec, values=prefill(spec, load_profile(db)))
+
+
+@app.get("/forms/{form_id}/blank.pdf")
+def blank_form(form_id: str, forms: Forms) -> FileResponse:
+    spec = _form_or_404(forms, form_id)
+    return FileResponse(forms.pdf_path(spec), media_type="application/pdf")
+
+
+class PreviewRequest(BaseModel):
+    values: dict[str, str]
+
+
+def _filled(spec: FormSpec, forms: FormRegistry, values: dict[str, str]) -> bytes:
+    font = Settings().data_dir / "fonts" / "DejaVuSans.ttf"
+    try:
+        return fill_pdf(spec, forms.pdf_path(spec), font, values)
+    except FieldNotFound as e:
+        raise HTTPException(
+            status_code=500, detail={"code": "field_not_found", "message": str(e)}
+        ) from e
+
+
+def _png(pdf: bytes | Path, page: int) -> Response:
+    try:
+        return Response(content=render_page_png(pdf, page), media_type="image/png")
+    except IndexError as e:
+        raise HTTPException(status_code=404, detail={"code": "page_not_found"}) from e
+
+
+@app.get("/forms/{form_id}/pages/{page}.png")
+def blank_page(form_id: str, page: int, forms: Forms) -> Response:
+    spec = _form_or_404(forms, form_id)
+    return _png(forms.pdf_path(spec), page)
+
+
+@app.post("/forms/{form_id}/preview/{page}.png")
+def preview_page(form_id: str, page: int, body: PreviewRequest, forms: Forms) -> Response:
+    """Image of a filled page, for review before download."""
+    spec = _form_or_404(forms, form_id)
+    return _png(_filled(spec, forms, body.values), page)
+
+
+@app.post("/forms/{form_id}/fill")
+def fill_form(form_id: str, body: FillRequest, forms: Forms) -> Response:
+    """Return the filled PDF for the user to download. Nothing is submitted anywhere."""
+    if not body.reviewed:
+        raise HTTPException(status_code=422, detail={"code": "not_reviewed"})
+    spec = _form_or_404(forms, form_id)
+    pdf = _filled(spec, forms, body.values)
+    return Response(
+        content=pdf,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'inline; filename="{spec.code}-da-dien.pdf"'},
+    )

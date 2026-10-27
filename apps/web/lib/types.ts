@@ -84,3 +84,48 @@ export type AgentReply = {
   dossier: Dossier | null;
   message: string | null;
 };
+
+// Saved profile (apps/api/src/hosoai/profile/models.py)
+export type Profile = {
+  full_name: string | null;
+  date_of_birth: string | null; // YYYY-MM-DD
+  sex: "Nam" | "Nữ" | null;
+  id_number: string | null;
+  nationality: string | null;
+  ethnicity: string | null;
+  religion: string | null;
+  place_of_birth: string | null;
+  hometown: string | null;
+  permanent_address: string | null;
+  current_address: string | null;
+  occupation: string | null;
+  phone: string | null;
+  email: string | null;
+  passport_number: string | null;
+};
+
+// Fillable official forms (apps/api/src/hosoai/forms/models.py)
+export type FormField = {
+  key: string;
+  label: string; // exact text printed on the official form
+  hint: string | null; // our own short gloss, not official text
+  profile_key: keyof Profile | null;
+  page: number;
+  mode: "after_label" | "boxes" | "acroform";
+  max_chars: number | null;
+};
+
+export type FormSpec = {
+  id: string;
+  code: string;
+  title: string;
+  procedure_slugs: string[];
+  source: Source;
+  fields: FormField[];
+  notes: string[];
+  preview_pages: number;
+};
+
+export type FormSummary = Pick<FormSpec, "id" | "code" | "title" | "procedure_slugs" | "source">;
+
+export type FormDetail = { spec: FormSpec; values: Record<string, string> };

@@ -13,6 +13,7 @@ dependencies = [
     "pymupdf>=1.24",
     "beautifulsoup4>=4.15.0",
     "httpx>=0.28.1",
+    "email-validator>=2",
 ]
 
 [dependency-groups]
@@ -44,3 +45,8 @@ plugins = ["pydantic.mypy"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[[tool.mypy.overrides]]
+# PyMuPDF ships without complete type hints.
+module = ["hosoai.forms.fill"]
+disallow_untyped_calls = false

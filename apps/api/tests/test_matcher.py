@@ -16,7 +16,7 @@ def _ask(name: str, query: str) -> dict[str, Any]:
     try:
         resp = client.post("/ask", json={"query": query})
     finally:
-        app.dependency_overrides.clear()
+        app.dependency_overrides.pop(get_llm, None)
     assert resp.status_code == 200
     data: dict[str, Any] = resp.json()
     return data
@@ -51,7 +51,7 @@ def test_prompt_lists_only_known_procedures_and_the_query() -> None:
     try:
         client.post("/ask", json={"query": "hộ chiếu"})
     finally:
-        app.dependency_overrides.clear()
+        app.dependency_overrides.pop(get_llm, None)
     [messages] = fake.calls
     prompt = messages[-1].content
     assert "passport |" in prompt and "hộ chiếu" in prompt
@@ -63,5 +63,5 @@ def test_empty_query_rejected() -> None:
     try:
         assert client.post("/ask", json={"query": ""}).status_code == 422
     finally:
-        app.dependency_overrides.clear()
+        app.dependency_overrides.pop(get_llm, None)
     assert fake.calls == []

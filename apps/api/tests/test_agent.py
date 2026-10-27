@@ -25,7 +25,8 @@ def agent() -> Iterator[Callable[[str], FakeLLMClient]]:
     sessions = SessionStore()
     app.dependency_overrides[get_sessions] = lambda: sessions
     yield _use
-    app.dependency_overrides.clear()
+    app.dependency_overrides.pop(get_llm, None)
+    app.dependency_overrides.pop(get_sessions, None)
 
 
 def start(query: str) -> Json:

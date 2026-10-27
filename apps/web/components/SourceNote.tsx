@@ -2,7 +2,13 @@ import { formatRetrievedAt, sourceName } from "@/lib/format";
 import type { Source } from "@/lib/types";
 
 /** Citation line under a section: which official page, which code, when we read it. */
-export function SourceNote({ source }: { source: Source }) {
+export function SourceNote({
+  source,
+  numberLabel = "mã thủ tục",
+}: {
+  source: Source;
+  numberLabel?: string;
+}) {
   return (
     <p className="mt-3 text-sm text-muted">
       <span className="font-semibold text-stamp">Nguồn:</span>{" "}
@@ -14,7 +20,11 @@ export function SourceNote({ source }: { source: Source }) {
       >
         {sourceName(source)}
       </a>
-      {source.document_number && <>, mã thủ tục {source.document_number}</>}
+      {source.document_number && (
+        <>
+          , {numberLabel} {source.document_number}
+        </>
+      )}
       <>, đọc ngày {formatRetrievedAt(source.retrieved_at)}</>
     </p>
   );
