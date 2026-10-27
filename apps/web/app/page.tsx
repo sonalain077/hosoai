@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { AskForm } from "@/components/AskForm";
+import { AgentChat } from "@/components/AgentChat";
 import { listProcedures } from "@/lib/api";
 import type { ProcedureSummary } from "@/lib/types";
 
@@ -18,12 +18,12 @@ export default async function Home() {
         Bạn cần làm thủ tục gì?
       </h1>
       <p className="mt-4 max-w-prose text-lg text-muted">
-        Kể bằng lời của bạn. Chúng tôi tìm đúng thủ tục, liệt kê giấy tờ, các bước, thời hạn và lệ
-        phí, kèm đường dẫn tới trang chính thức cho từng mục.
+        Kể bằng lời của bạn. Chúng tôi tìm đúng thủ tục, hỏi vài câu ngắn về trường hợp của bạn,
+        rồi lập danh sách giấy tờ cần chuẩn bị. Mỗi mục đều dẫn tới trang chính thức.
       </p>
 
       <div className="mt-10">
-        <AskForm />
+        <AgentChat />
       </div>
 
       <section className="mt-20" aria-labelledby="all">

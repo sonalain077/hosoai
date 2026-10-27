@@ -24,7 +24,7 @@
     {"slug": "vehicle-registration", "title_vi": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh", "title_en": "First vehicle registration and plate", "audience": ["citizen", "foreigner"], "source": "bca", "page_id": "39372", "national_code": null},
     {"slug": "foreigner-temp-residence-card", "title_vi": "Cấp thẻ tạm trú cho người nước ngoài tại Việt Nam tại Công an cấp tỉnh", "title_en": "Temporary residence card for foreigners", "audience": ["foreigner"], "source": "bca", "page_id": "52392", "national_code": "1.003460",
      "warning": "Source cites Luật 47/2014/QH13 and 23/2023/QH15; check whether Luật 118/2025/QH15 (from 01/07/2026) changed it."},
-    {"slug": "foreigner-stay-extension", "title_vi": "Gia hạn tạm trú cho người nước ngoài tại Việt Nam (thực hiện tại cấp tỉnh)", "title_en": "Extend a foreigner's stay", "audience": ["foreigner"], "source": "bca", "page_id": "35696", "national_code": "1.001146",
+    {"slug": "foreigner-stay-extension", "title_vi": "Gia hạn tạm trú cho người nước ngoài tại Việt Nam (thực hiện tại cấp tỉnh)", "title_en": "Extend a foreigner's stay (visa extension, thị thực)", "audience": ["foreigner"], "source": "bca", "page_id": "35696", "national_code": "1.001146",
      "warning": "Same legal-basis caveat as foreigner-temp-residence-card."},
     {"slug": "birth-registration", "title_vi": "Thủ tục đăng ký khai sinh", "title_en": "Birth registration", "audience": ["citizen"], "source": "laocai", "page_id": "47907", "national_code": "1.001193"},
     {"slug": "marriage-registration", "title_vi": "Đăng ký kết hôn", "title_en": "Marriage registration", "audience": ["citizen"], "source": "laocai", "page_id": "47905", "national_code": "1.000894"},

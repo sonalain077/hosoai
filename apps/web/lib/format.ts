@@ -28,3 +28,12 @@ export function citesOtherPage(item: Source, page: Source): boolean {
 export function stripStepPrefix(text: string): string {
   return text.replace(/^\s*Bước\s*\d+\s*[:.\-–]\s*/i, "");
 }
+
+/** Splits a dossier into the three groups the user sees, keeping official order. */
+export function groupDossier<T extends { status: "needed" | "not_needed" | "unsure" }>(docs: T[]) {
+  return {
+    needed: docs.filter((d) => d.status === "needed"),
+    unsure: docs.filter((d) => d.status === "unsure"),
+    notNeeded: docs.filter((d) => d.status === "not_needed"),
+  };
+}

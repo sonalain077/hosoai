@@ -51,3 +51,36 @@ export type MatchResult = {
   candidates: ProcedureSummary[];
   message: string | null;
 };
+
+// Agent conversation (apps/api/src/hosoai/agent/loop.py)
+
+export type DocRef = { id: string; name: string };
+
+export type AgentQuestion = {
+  number: number;
+  kind: "case" | "choose_procedure";
+  text: string;
+  options: string[];
+  about: DocRef[];
+};
+
+export type QA = { number: number; question: string; answer: string };
+
+export type DocStatus = "needed" | "not_needed" | "unsure";
+
+export type DossierDocument = {
+  id: string;
+  status: DocStatus;
+  document: RequiredDocument;
+  because: QA[];
+};
+
+export type Dossier = { procedure: Procedure; documents: DossierDocument[]; answers: QA[] };
+
+export type AgentReply = {
+  session_id: string;
+  type: "question" | "dossier" | "not_found";
+  question: AgentQuestion | null;
+  dossier: Dossier | null;
+  message: string | null;
+};

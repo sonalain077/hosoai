@@ -1,4 +1,4 @@
-import type { MatchResult, Procedure, ProcedureSummary } from "./types";
+import type { AgentReply, MatchResult, Procedure, ProcedureSummary } from "./types";
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
@@ -37,4 +37,18 @@ export function ask(query: string): Promise<MatchResult> {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query }),
   });
+}
+
+const json = (body: unknown): RequestInit => ({
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(body),
+});
+
+export function agentStart(query: string): Promise<AgentReply> {
+  return request("/agent", json({ query }));
+}
+
+export function agentAnswer(sessionId: string, answer: string): Promise<AgentReply> {
+  return request(`/agent/${encodeURIComponent(sessionId)}`, json({ answer }));
 }

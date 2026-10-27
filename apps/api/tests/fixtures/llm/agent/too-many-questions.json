@@ -1,0 +1,11 @@
+{
+ "replies": [
+  "{\"slugs\": [\"passport\"]}",
+  "{\"action\": \"ask_user\", \"question\": \"Q1?\", \"options\": [\"a\", \"b\"], \"about\": [\"d1\"]}",
+  "{\"action\": \"ask_user\", \"question\": \"Q2?\", \"options\": [\"a\", \"b\"], \"about\": [\"d1\"]}",
+  "{\"action\": \"ask_user\", \"question\": \"Q3?\", \"options\": [\"a\", \"b\"], \"about\": [\"d1\"]}",
+  "{\"action\": \"ask_user\", \"question\": \"Q4?\", \"options\": [\"a\", \"b\"], \"about\": [\"d1\"]}",
+  "{\"action\": \"ask_user\", \"question\": \"Q5?\", \"options\": [\"a\", \"b\"], \"about\": [\"d1\"]}",
+  "{\"action\": \"finish\", \"documents\": {\"d1\": \"not_needed\"}, \"because\": {\"d1\": [4]}}"
+ ]
+}

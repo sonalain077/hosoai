@@ -1,0 +1,8 @@
+{
+ "replies": [
+  "{\"slugs\": [\"passport\"]}",
+  "{\"action\": \"ask_user\", \"question\": \"Người làm hộ chiếu đã đủ 14 tuổi chưa?\", \"options\": [\"Đã đủ 14 tuổi\", \"Chưa đủ 14 tuổi\"], \"about\": [\"d1\", \"d2\", \"d99\"]}",
+  "Sure, next question: {\"action\": \"ask_user\", \"question\": \"Bạn đã từng có hộ chiếu chưa?\", \"options\": [\"Chưa từng\", \"Đã có, còn hạn\", \"Đã có, bị mất\"], \"about\": [\"d3\"]}",
+  "{\"action\": \"finish\", \"documents\": {\"d1\": \"not_needed\", \"d2\": \"not_needed\", \"d3\": \"not_needed\", \"d4\": \"unsure\", \"d5\": \"needed\", \"d6\": \"needed\", \"d7\": \"needed\", \"d42\": \"needed\"}, \"because\": {\"d1\": [1], \"d3\": [2], \"d2\": []}}"
+ ]
+}

@@ -1,0 +1,7 @@
+{
+ "replies": [
+  "{\"slugs\": [\"id-card-new\"]}",
+  "{\"action\": \"open_procedure\", \"slug\": \"passport\"}",
+  "{\"action\": \"finish\", \"documents\": {\"d1\": \"needed\"}}"
+ ]
+}

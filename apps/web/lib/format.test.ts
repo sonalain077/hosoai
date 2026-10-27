@@ -1,6 +1,12 @@
 import { describe, expect, test } from "vitest";
 
-import { citesOtherPage, formatRetrievedAt, sourceName, stripStepPrefix } from "./format";
+import {
+  citesOtherPage,
+  formatRetrievedAt,
+  groupDossier,
+  sourceName,
+  stripStepPrefix,
+} from "./format";
 import type { Source } from "./types";
 
 const src = (over: Partial<Source> = {}): Source => ({
@@ -30,5 +36,21 @@ describe("format", () => {
   test("strips the portal's own step numbering", () => {
     expect(stripStepPrefix("Bước 1: Chuẩn bị hồ sơ.")).toBe("Chuẩn bị hồ sơ.");
     expect(stripStepPrefix("Nộp hồ sơ")).toBe("Nộp hồ sơ");
+  });
+});
+
+describe("groupDossier", () => {
+  test("keeps every document, grouped by status, in order", () => {
+    const docs = [
+      { id: "d1", status: "needed" as const },
+      { id: "d2", status: "not_needed" as const },
+      { id: "d3", status: "unsure" as const },
+      { id: "d4", status: "needed" as const },
+    ];
+    const g = groupDossier(docs);
+    expect(g.needed.map((d) => d.id)).toEqual(["d1", "d4"]);
+    expect(g.unsure.map((d) => d.id)).toEqual(["d3"]);
+    expect(g.notNeeded.map((d) => d.id)).toEqual(["d2"]);
+    expect(g.needed.length + g.unsure.length + g.notNeeded.length).toBe(docs.length);
   });
 });
