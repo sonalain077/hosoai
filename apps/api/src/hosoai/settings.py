@@ -17,3 +17,4 @@ class Settings(BaseSettings):
     llm_vision_model: str = "qwen2.5vl:7b"
     database_url: str = "sqlite:///./hosoai.db"
     data_dir: Path = REPO_ROOT / "data"
+    cors_origins: list[str] = ["http://localhost:3000"]
