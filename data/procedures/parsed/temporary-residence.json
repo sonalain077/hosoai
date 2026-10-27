@@ -1,0 +1,257 @@
+{
+  "slug": "temporary-residence",
+  "title": "Đăng ký tạm trú",
+  "national_code": "1.004194",
+  "field": {
+    "text": "Đăng ký, quản lý cư trú",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+      "title": "Đăng ký tạm trú",
+      "document_number": "1.004194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:28.302219Z"
+    }
+  },
+  "agency": {
+    "text": "Công an Xã",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+      "title": "Đăng ký tạm trú",
+      "document_number": "1.004194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:28.302219Z"
+    }
+  },
+  "methods": [
+    {
+      "text": "Trực tiếp",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "text": "Trực tuyến",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "text": "Bước 1: Cá nhân, tổ chức chuẩn bị hồ sơ theo quy định của pháp luật.\nBước 2: Cá nhân, tổ chức nộp hồ sơ tại Công an cấp xã.\nBước 3: Khi tiếp nhận hồ sơ đăng ký tạm trú, cơ quan đăng ký cư trú kiểm tra tính pháp lý và nội dung hồ sơ:\n+ Trường hợp hồ sơ đã đầy đủ, hợp lệ thì tiếp nhận hồ sơ và cấp Phiếu tiếp nhận hồ sơ và hẹn trả kết quả (mẫu CT04 ban hành kèm theo Thông tư số 56/2021/TT-BCA) cho người đăng ký;\n+ Trường hợp hồ sơ đủ điều kiện nhưng chưa đủ hồ sơ thì hướng dẫn bổ sung, hoàn thiện và cấp Phiếu hướng dẫn bổ sung, hoàn thiện hồ sơ (mẫu CT05 ban hành kèm theo Thông tư số 56/2021/TT-BCA) cho người đăng ký;\n+ Trường hợp hồ sơ không đủ điều kiện thì từ chối và cấp Phiếu từ chối tiếp nhận, giải quyết hồ sơ (mẫu CT06 ban hành kèm theo Thông tư số 56/2021/TT-BCA) cho người đăng ký.\nBước 4: Cá nhân, tổ chức nộp lệ phí đăng ký cư trú theo quy định.\nBước 5: Căn cứ theo ngày hẹn trên Phiếu tiếp nhận hồ sơ và hẹn trả kết quả để nhận thông báo kết quả giải quyết thủ tục đăng ký cư trú (nếu có).",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    }
+  ],
+  "processing_time": {
+    "text": "Trực tiếp\n03 Ngày làm việc - Nộp hồ sơ trực tiếp tại Công an cấp xã.\nThời gian tiếp nhận hồ sơ: Giờ hành chính các ngày làm việc từ thứ 2 đến thứ 6 và sáng thứ 7 hàng tuần (trừ các ngày nghỉ lễ, tết theo quy định của pháp luật).\nTrực tuyến\n03 Ngày làm việc - Nộp hồ sơ trực tuyến qua các cổng cung cấp dịch vụ công trực tuyến như: Trực tuyến tại Cổng dịch vụ công qua Cổng dịch vụ công quốc gia, hoặc qua Cổng dịch vụ công Bộ Công an, Cổng dịch vụ công quản lý cư trú;\nThời gian tiếp nhận hồ sơ: Giờ hành chính các ngày làm việc từ thứ 2 đến thứ 6 và sáng thứ 7 hàng tuần (trừ các ngày nghỉ lễ, tết theo quy định của pháp luật).",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+      "title": "Đăng ký tạm trú",
+      "document_number": "1.004194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:28.302219Z"
+    }
+  },
+  "fee": {
+    "text": "Phí: 1\nLệ phí: Không",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+      "title": "Đăng ký tạm trú",
+      "document_number": "1.004194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:28.302219Z"
+    }
+  },
+  "documents": [
+    {
+      "name": "Tờ khai thay đổi thông tin cư trú (Mẫu CT01 ban hành kèm theo Thông tư số 56/2021/TT-BCA); đối với người đăng ký tạm trú là người chưa thành niên thì trong tờ khai phải ghi rõ ý kiến đồng ý của cha, mẹ hoặc người giám hộ, trừ trường hợp đã có ý kiến đồng ý bằng văn bản;",
+      "form_name": "CT01 Tờ khai thay đổi thông tin cư trú.doc",
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "name": "Giấy tờ, tài liệu chứng minh chỗ ở hợp pháp.",
+      "form_name": null,
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "name": "Tờ khai thay đổi thông tin cư trú (Mẫu CT01 ban hành kèm theo Thông tư số 56/2021/TT-BCA);",
+      "form_name": "CT01 Tờ khai thay đổi thông tin cư trú.doc",
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "name": "Giấy giới thiệu của Thủ trưởng đơn vị quản lý trực tiếp ghi rõ nội dung để làm thủ tục đăng ký tạm trú và đơn vị có chỗ ở cho cán bộ chiến sĩ (ký tên, đóng dấu).",
+      "form_name": null,
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "name": "Tờ khai thay đổi thông tin cư trú (của từng người) (Mẫu CT01 ban hành kèm theo Thông tư số 56/2021/TT-BCA);",
+      "form_name": "CT01 Tờ khai thay đổi thông tin cư trú.doc",
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "name": "Văn bản đề nghị đăng ký tạm trú trong đó ghi rõ thông tin về chỗ ở hợp pháp kèm danh sách người tạm trú. Danh sách bao gồm những thông tin cơ bản của từng người: họ, chữ đệm và tên; ngày, tháng, năm sinh; giới tính; số định danh cá nhân và thời hạn tạm trú.",
+      "form_name": null,
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    }
+  ],
+  "conditions": {
+    "text": "Không",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+      "title": "Đăng ký tạm trú",
+      "document_number": "1.004194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:28.302219Z"
+    }
+  },
+  "legal_basis": [
+    {
+      "text": "Luật 68/2020/QH14 Số: 68/2020/QH14",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "text": "Thông tư 55/2021/TT-BCA Số: 55/2021/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "text": "Thông tư 56/2021/TT-BCA Số: 56/2021/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "text": "Thông tư 57/2021/TT-BCA Số: 57/2021/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "text": "Thông tư 85/2019/TT-BTC Số: 85/2019/TT-BTC",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    }
+  ],
+  "result": {
+    "text": "Cập nhật thông tin trong Cơ sở dữ liệu quốc gia về dân cư\nCập nhật thông tin trong Cơ sở dữ liệu về cư trú\nThông báo về kết quả giải quyết, hủy bỏ đăng ký cư trú\nPhiếu từ chối tiếp nhận, giải quyết hồ sơ",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+      "title": "Đăng ký tạm trú",
+      "document_number": "1.004194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:28.302219Z"
+    }
+  },
+  "forms": [
+    {
+      "label": "Tờ khai thay đổi thông tin cư trú (Mẫu CT01 ban hành kèm theo Thông tư số 56/2021/TT-BCA)",
+      "url": "https://dichvucong.bocongan.gov.vn/public_dir/tttl/01/giayto/2023_10/1698204115_CT01.doc",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    },
+    {
+      "label": "Tờ khai thay đổi thông tin cư trú (Mẫu CT01 ban hành kèm theo Thông tư số 56/2021/TT-BCA); đối với người đăng ký tạm trú là người chưa thành niên thì trong tờ khai phải ghi rõ ý kiến đồng ý của cha, mẹ hoặc người giám hộ, trừ trường hợp đã có ý kiến đồng ý bằng văn bản;",
+      "url": "https://dichvucong.bocongan.gov.vn/public_dir/tttl/01/giayto/2022_01/1643318294_CT01_To_khai_thay_doi_thong_tin_cu_tru.doc",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+        "title": "Đăng ký tạm trú",
+        "document_number": "1.004194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:28.302219Z"
+      }
+    }
+  ],
+  "warnings": [],
+  "source": {
+    "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26356",
+    "title": "Đăng ký tạm trú",
+    "document_number": "1.004194",
+    "publisher": "Cổng Dịch vụ công - Bộ Công an",
+    "retrieved_at": "2026-10-26T10:42:28.302219Z"
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "slug": "id-card-new",
+  "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+  "national_code": "2.000200",
+  "field": {
+    "text": "Cấp, quản lý căn cước",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+      "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+      "document_number": "2.000200",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:17.197113Z"
+    }
+  },
+  "agency": {
+    "text": "Phòng cảnh sát quản lý hành chính về trật tự xã hội",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+      "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+      "document_number": "2.000200",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:17.197113Z"
+    }
+  },
+  "methods": [
+    {
+      "text": "Trực tiếp",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "text": "Trực tuyến",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "text": "Bước 1:\n+ Công dân đến địa điểm làm thủ tục cấp thẻ căn cước tại cơ quan quản lý căn cước của Công an cấp tỉnh (Phòng Cảnh sát Quản lý hành chính về trật tự xã hội, Công an các tỉnh, thành phố) hoặc Trung tâm phục vụ hành chính công tỉnh, thành phố (nếu đã triển khai) trong cả nước không phụ thuộc vào nơi cư trú đề nghị cấp thẻ căn cước.\n+ Công dân thông qua Cổng dịch vụ công quốc gia, Cổng dịch vụ công Bộ Công an, ứng dụng định danh quốc gia lựa chọn thủ tục cấp thẻ căn cước, kiểm tra thông tin của mình được khai thác trong Cơ sở dữ liệu quốc gia về dân cư. Trường hợp thông tin chính xác thì đăng ký thời gian, địa điểm thực hiện thủ tục tại cơ quản quản lý căn cước của Công an cấp tỉnh. Hệ thống sẽ xác nhận và tự động chuyển đề nghị của công dân đến cơ quan quản lý căn cước nơi công dân đề nghị cấp thẻ căn cước.\n(Lưu ý: Lộ trình cấp thẻ căn cước cho người từ đủ 14 tuổi trở lên tại cơ quan quản lý căn cước của Công an cấp tỉnh trong cả nước không phụ thuộc vào nơi cư trú thực hiện theo thông báo của Bộ Công an)\nBước 2: Công dân cung cấp thông tin gồm họ, chữ đệm và tên khai sinh, số định danh cá nhân, nơi cư trú để người tiếp nhận kiểm tra đối chiếu thông tin trong Cơ sở dữ liệu quốc gia về dân cư.\nBước 3: Cán bộ thu nhận thông tin công dân tìm kiếm thông tin trong Cơ sở dữ liệu quốc gia về dân cư để lập hồ sơ cấp thẻ căn cước.\n+ Trường hợp thông tin công dân chưa có trong Cơ sở dữ liệu quốc gia về dân cư Cán bộ thu nhận đề nghị công dân xuất trình một trong các loại giấy tờ pháp lý chứng minh nội dung thông tin nhân thân và hướng dẫn thu thập, cập nhật thông tin vào Cơ sở dữ liệu quốc gia về dân cư trước khi thực hiện thủ tục cấp thẻ căn cước.\n+ Trường hợp thông tin công dân có sự thay đổi, điều chỉnh thì Cán bộ thu nhận hướng dẫn công dân thực hiện thủ tục điều chỉnh thông tin trong Cơ sở dữ liệu quốc gia về dân cư trước khi thực hiện thủ tục cấp thẻ căn cước.\n+ Trường hợp thông tin công dân đầy đủ, chính xác thì sử dụng thông tin của công dân trong cơ sở dữ liệu quốc gia về dân cư để lập hồ sơ cấp thẻ căn cước.\n+ Trường hợp công dân không đủ điều kiện cấp thẻ căn cước thì từ chối tiếp nhận và nêu rõ lý do, thông báo về việc từ chối giải quyết thủ tục về căn cước (Mẫu CC03 ban hành kèm theo Thông tư số 53/2025/TT-BCA ngày 01/7/2025 của Bộ Công an).\nBước 4: Tiến hành thu nhận vân tay, chụp ảnh khuôn mặt và thu nhận ảnh mống mắt của công dân.\nBước 5: In Phiếu thu nhận thông tin căn cước, Phiếu thu thập thông tin dân cư (nếu có) chuyển cho công dân kiểm tra, ký xác nhận.\nBước 6: Thu thẻ Căn cước công dân (nếu có), thu lệ phí (nếu có) và cấp giấy hẹn Trả kết quả giải quyết thủ tục về căn cước (mẫu CC02 ban hành kèm theo Thông tư số 17/2024/TT-BCA ngày 15/5/2024 của Bộ trưởng Bộ Công an).\nBước 7: Nhận kết quả trực tiếp tại cơ quan quản lý căn cước Công an cấp tỉnh hoặc trả qua dịch vụ bưu chính đến địa chỉ theo yêu cầu.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    }
+  ],
+  "processing_time": {
+    "text": "07 ngày làm việc",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+      "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+      "document_number": "2.000200",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:17.197113Z"
+    }
+  },
+  "fee": {
+    "text": "Phí: Không\nLệ phí: Không",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+      "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+      "document_number": "2.000200",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:17.197113Z"
+    }
+  },
+  "documents": [
+    {
+      "name": "Phiếu đề nghị giải quyết thủ tục về căn cước (Mẫu DC02 ban hành kèm theo Thông tư số 17/2024/TT-BCA của Bộ Công an)",
+      "form_name": "Mẫu DC02 Phiếu đề nghị giải quyết thủ tục về căn cước.doc",
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "name": "Giấy tờ pháp lý chứa thông tin công dân",
+      "form_name": null,
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "name": "Phiếu thu thập thông tin dân cư (mẫu DC01 ban hành kèm theo Thông tư số 53/2025/TT-BCA ngày 01/7/2025 của Bộ Công an)",
+      "form_name": "Mẫu DC01 Phiếu thu thập thông tin dân cư.docx",
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "name": "Phiếu thu nhận thông tin căn cước (Mẫu CC01 ban hành kèm theo Thông tư số 17/2024/TT-BCA của Bộ Công an)",
+      "form_name": "Mẫu CC01 Phiếu thu nhận thông tin căn cước.doc",
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    }
+  ],
+  "conditions": {
+    "text": "Không",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+      "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+      "document_number": "2.000200",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:17.197113Z"
+    }
+  },
+  "legal_basis": [
+    {
+      "text": "Nghị quyết số 190/2025/QH15 của Quốc hội: Quy định về xử lý một số vấn đề liên quan đến sắp xếp tổ chức bộ máy nhà nước Số: 190/2025/NQ-QH15",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "text": "Luật Căn cước Số: 26/2023/QH15",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "text": "Nghị định của Chính phủ: Quy định chi tiết một số điều và biện pháp thi hành Luật Căn cước Số: 70/2024/NĐ-CP",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "text": "Thông tư 16/2024/TT-BCA quy định về mẫu thẻ căn cước, mẫu giấy chứng nhận căn cước Số: 16/2024/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "text": "Thông tư quy định chi tiết một số điều và biện pháp thi hành Luật Căn cước Số: 17/2024/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "text": "Thông tư quy định quy định về quy trình cấp, cấp đổi, cấp lại thẻ căn cước, giấy chứng nhận căn cước Số: 18/2024/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "text": "Thông tư số 53/2025/TT-BCAngày 01/7/2025 của Bộ Công an sửa đổi, bổ sung một số điều của Thông tư số 55/2021/TT-BCA ngày 15 tháng 5 năm 2021 của Bộ trưởng Bộ Công an quy định chi tiết một số điều và biện pháp thi hành Luật Cư trú được sửa đổi, bổ sung bởi Thông tư số 66/2023/TT-BCA ngày 17 tháng 11 năm 2023; Thông tư số 56/2021/TT-BCA ngày 15 tháng 5 năm 2021 của Bộ trưởng Bộ Công an quy định về biểu mẫu trong đăng ký, quản lý cư trú được sửa đổi, bổ sung bởi Thông tư số 66/2023/TT-BCA ngày 17 tháng 11 năm 2023; Thông tư số 17/2024/TT-BCA ngày 15 tháng 5 năm 2024 của Bộ trưởng Bộ Công an quy định chi tiết một số điều và biện pháp thi hành Luật Căn cước. Số: 53/2025/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    }
+  ],
+  "result": {
+    "text": "Thẻ căn cước",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+      "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+      "document_number": "2.000200",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:17.197113Z"
+    }
+  },
+  "forms": [
+    {
+      "label": "Tờ khai Căn cước công dân (ký hiệu là CC01)",
+      "url": "https://dichvucong.bocongan.gov.vn/public_dir/tttl/10/giayto/2020_11/1604372463_Mau_CC01.doc",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    },
+    {
+      "label": "Phiếu thu nhận thông tin căn cước công dân (ký hiệu là CC02)",
+      "url": "https://dichvucong.bocongan.gov.vn/public_dir/tttl/10/giayto/2020_11/1604372319_Mau_CC02.doc",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+        "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+        "document_number": "2.000200",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:17.197113Z"
+      }
+    }
+  ],
+  "warnings": [],
+  "source": {
+    "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26052",
+    "title": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh",
+    "document_number": "2.000200",
+    "publisher": "Cổng Dịch vụ công - Bộ Công an",
+    "retrieved_at": "2026-10-26T10:42:17.197113Z"
+  }
+}

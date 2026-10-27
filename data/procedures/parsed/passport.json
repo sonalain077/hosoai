@@ -1,0 +1,300 @@
+{
+  "slug": "passport",
+  "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+  "national_code": "1.001456",
+  "field": {
+    "text": "Quản lý xuất nhập cảnh",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+      "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+      "document_number": "1.001456",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:13.837193Z"
+    }
+  },
+  "agency": {
+    "text": "Công an Tỉnh",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+      "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+      "document_number": "1.001456",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:13.837193Z"
+    }
+  },
+  "methods": [
+    {
+      "text": "Trực tiếp",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "text": "Trực tuyến",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "text": "Dịch vụ bưu chính",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "text": "Bước 1: Chuẩn bị hồ sơ theo quy định của pháp luật.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "text": "Bước 2: Nộp hồ sơ\n* Người đề nghị cấp hộ chiếu phổ thông không gắn chíp điện tử trực tiếp nộp hồ sơ vào giờ hành chính các ngày làm việc trong tuần tại Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh (khi đến nộp hồ sơ phải xuất trình Chứng minh nhân dân, Thẻ căn cước công dân hoặc hộ chiếu còn giá trị sử dụng) hoặc nộp hồ sơ trực tuyến qua Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an và gửi bổ sung hồ sơ qua dịch vụ bưu chính công ích theo thông báo của Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an (nếu có), cụ thể:\n+ Người đề nghị cấp hộ chiếu lần đầu thực hiện tại Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh nơi thường trú hoặc tạm trú; trường hợp có Thẻ căn cước công dân thực hiện tại Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh nơi thuận lợi.\n+ Người đề nghị cấp hộ chiếu từ lần thứ hai thực hiện tại Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh nơi thuận lợi.\n* Cán bộ quản lý xuất nhập cảnh tiếp nhận hồ sơ kiểm tra tính pháp lý và nội dung hồ sơ:\n+ Trường hợp hồ sơ đã đầy đủ, hợp lệ thì cấp giấy hẹn trả kết quả cho người đề nghị cấp hộ chiếu phổ thông; yêu cầu nộp lệ phí cho cán bộ thu lệ phí, cán bộ thu lệ phí thu tiền, giao biên lai thu tiền cho người đề nghị cấp hộ chiếu phổ thông hoặc thông báo trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an để người đề nghị cấp hộ chiếu phổ thông thanh toán trực tuyến và nhận biên lai điện tử.\n+ Trường hợp hồ sơ thiếu hoặc không hợp lệ thì cán bộ tiếp nhận hồ sơ hướng dẫn hoặc thông báo trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an để người đề nghị cấp hộ chiếu phổ thông hoàn chỉnh hồ sơ.\n+ Trường hợp hồ sơ không đủ điều kiện thì không tiếp nhận hồ sơ, trả lời bằng văn bản hoặc thông báo trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an và nêu rõ lý do.\n* Người đề nghị cấp hộ chiếu phổ thông có thể yêu cầu nhận kết quả qua dịch vụ bưu chính và phải trả phí dịch vụ chuyển phát.\n* Thời gian tiếp nhận hồ sơ: Từ thứ 2 đến thứ 6 hàng tuần và sáng thứ 7 (đối với các đơn vị bố trí tiếp nhận hồ sơ vào sáng thứ 7); trừ ngày Tết, ngày lễ.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "text": "Bước 3: Nhận kết quả\n+ Người đề nghị cấp hộ chiếu phổ thông trực tiếp nhận kết quả tại Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh; khi đến nhận kết quả mang theo giấy hẹn trả kết quả, xuất trình Chứng minh nhân dân hoặc Thẻ căn cước công dân. Trường hợp đề nghị nhận kết quả qua dịch vụ bưu chính thực hiện theo hướng dẫn của cơ quan cung cấp dịch vụ bưu chính.\n+ Trường hợp chưa cấp hộ chiếu phổ thông thì trả lời bằng văn bản hoặc thông báo trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an và nêu rõ lý do.\n+ Thời gian trả hộ chiếu: Từ thứ 2 đến thứ 6 hàng tuần (trừ ngày Tết, ngày lễ).",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    }
+  ],
+  "processing_time": {
+    "text": "Trực tiếp\n08 Ngày làm việc nộp hồ sơ trực tiếp tại trụ sở Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh (có thể khai tờ khai đề nghị cấp hộ chiếu phổ thông ở trong nước qua các cổng cung cấp dịch vụ công trực tuyến trước khi đến nộp hồ sơ trực tuyến).\nTrực tuyến\n08 Ngày làm việc nộp hồ sơ trực tuyến qua Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an.\nDịch vụ bưu chính\n08 Ngày làm việc nộp bổ sung hồ sơ qua dịch vụ bưu chính công ích theo thông báo của Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an (nếu có).",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+      "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+      "document_number": "1.001456",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:13.837193Z"
+    }
+  },
+  "fee": {
+    "text": "Phí: 160.000/hộ chiếu, trường hợp cấp lại do bị hư hỏng hoặc bị mất: 320.000đ/hộ chiếu (áp dụng đến hết ngày 31/12/2023 theo Thông tư số 44/2023/TT-BTC ngày 29/6/2023 của Bộ tài chính)\nLệ phí: Không",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+      "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+      "document_number": "1.001456",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:13.837193Z"
+    }
+  },
+  "documents": [
+    {
+      "name": "Bản sao giấy khai sinh hoặc trích lục giấy khai sinh đối với người chưa đủ 14 tuổi chưa được cấp mã số định danh cá nhân; trường hợp không có bản sao Giấy khai sinh, trích lục khai sinh thì nộp bản chụp và xuất trình bản chính để kiểm tra, đối chiếu.",
+      "form_name": null,
+      "quantity": "Bản chính: 1, Bản sao: 1",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "name": "Bản sao giấy tờ do cơ quan có thẩm quyền của Việt Nam cấp chứng minh người đại diện hợp pháp đối với người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi theo quy định của Bộ luật dân sự, người chưa đủ 14 tuổi; trường hợp không có bản sao thì nộp bản chụp và xuất trình bản chính để kiểm tra, đối chiếu.",
+      "form_name": null,
+      "quantity": "Bản chính: 1, Bản sao: 1",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "name": "Hộ chiếu phổ thông cấp lần gần nhất còn giá trị sử dụng đối với người đã được cấp hộ chiếu; trường hợp hộ chiếu còn giá trị sử dụng bị mất phải kèm đơn báo mất hoặc thông báo về việc đã tiếp nhận đơn của cơ quan có thẩm quyền quy định tại điểm a khoản 2 Điều 28 Luật Xuất cảnh, nhập cảnh của công dân Việt Nam.",
+      "form_name": null,
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "name": "Trường hợp nộp hồ sơ trực tuyến thì thành phần hồ sơ phải được chứng thực điện tử theo quy định, trường hợp hồ sơ chưa được chứng thực điện tử thì gửi hồ sơ về cơ quan tiếp nhận thông qua dịch vụ bưu chính công ích.",
+      "form_name": null,
+      "quantity": "Bản chính: 0, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "name": "Tờ khai đề nghị cấp hộ chiếu phổ thông ở trong nước (mẫu TK01 dành cho người từ 14 tuổi trở lên; mẫu TK01a dành cho người chưa đủ 14 tuổi) ban hành kèm theo Thông tư số 31/2023/TT-BCA ngày 20/7/2023 của Bộ Công an. Đối với người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi theo quy định của Bộ luật Dân sự, người chưa đủ 14 tuổi thì người đại diện hợp pháp khai và ký thay.",
+      "form_name": "Mau TK01 to khai cap HCPT ở trong nước TK01 MỚI.doc",
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "name": "Tờ khai đề nghị cấp hộ chiếu phổ thông ở trong nước (mẫu TK01 dành cho người từ 14 tuổi trở lên; mẫu TK01a dành cho người chưa đủ 14 tuổi) ban hành kèm theo Thông tư số 31/2023/TT-BCA ngày 20/7/2023 của Bộ Công an. Đối với người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi theo quy định của Bộ luật Dân sự, người chưa đủ 14 tuổi thì người đại diện hợp pháp khai và ký thay.",
+      "form_name": "Mau TK01a to khai trẻ em cap HCPT ở trong nước TK01a MỚI.doc",
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "name": "Ảnh mới chụp không quá 06 tháng, cỡ 4cm x 6cm, mặt nhìn thẳng, đầu để trần, rõ mặt, rõ hai tai, không đeo kính, trang phục lịch sự, phông ảnh nền trắng",
+      "form_name": null,
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    }
+  ],
+  "conditions": {
+    "text": "Không thuộc các trường hợp chưa được cấp giấy tờ xuất nhập cảnh theo quy định tại Điều 21 Luật xuất cảnh, nhập cảnh của công dân Việt Nam.",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+      "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+      "document_number": "1.001456",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:13.837193Z"
+    }
+  },
+  "legal_basis": [
+    {
+      "text": "Luật số 49/2019/QH14",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "text": "Thông tư số 110/2020/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "text": "Thông tư số 25/2021/TT-BTC",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "text": "Thông tư số 44/2023/TT-BTC",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "text": "Luật số 23/2023/QH15 sửa đổi Xuất cảnh, nhập cảnh của công dân Việt Nam và Luật Nhập cảnh, xuất cảnh, quá cảnh, cư trú của người nước ngoài tại Việt Nam",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    },
+    {
+      "text": "Thông tư số 31/2023/TT-BCA ngày 20/7/2023 của Bộ Công an quy định về mẫu hộ chiếu, mẫu giấy thông hành và các biểu mẫu liên quan.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    }
+  ],
+  "result": {
+    "text": "Hộ chiếu phổ thông không gắn chíp điện tử hoặc hộ chiếu phổ thông có gắn chíp điện tử.",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+      "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+      "document_number": "1.001456",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:13.837193Z"
+    }
+  },
+  "forms": [
+    {
+      "label": "+ Hộ chiếu phổ thông cấp lần gần nhất đối với người đã được cấp hộ chiếu; trường hợp bị mất hộ chiếu, phải có đơn trình báo mất hộ chiếu hoặc thông báo về việc đã tiếp nhận đơn của cơ quan có thẩm quyền quy định tại Điều 28 Luật Xuất cảnh, nhập cảnh của công dân Việt Nam;",
+      "url": "https://dichvucong.bocongan.gov.vn/public_dir/tttl/01/2024/08/MauTK05tt31e02d0_1723631335.doc",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+        "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+        "document_number": "1.001456",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:13.837193Z"
+      }
+    }
+  ],
+  "warnings": [
+    "Source still cites Luật 49/2019/QH14; Luật 118/2025/QH15 amended it from 01/07/2026. Fee note on source refers to an expired rate."
+  ],
+  "source": {
+    "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=29497",
+    "title": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)",
+    "document_number": "1.001456",
+    "publisher": "Cổng Dịch vụ công - Bộ Công an",
+    "retrieved_at": "2026-10-26T10:42:13.837193Z"
+  }
+}

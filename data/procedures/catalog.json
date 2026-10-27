@@ -1,0 +1,41 @@
+{
+  "_comment": "Procedures the app knows about. Each entry points at an official government page. Content is fetched from source_url and must be cited from there; nothing here is a substitute for the official text. Checked 2026-10-26.",
+  "sources": {
+    "bca": {
+      "name": "Cổng Dịch vụ công - Bộ Công an",
+      "reuse_note": "Footer says: 'Khi sử dụng lại thông tin, đề nghị ghi rõ nguồn \"Cổng Dịch vụ công - Bộ Công an\"'",
+      "url_template": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt={page_id}"
+    },
+    "laocai": {
+      "name": "Cổng Dịch vụ công tỉnh Lào Cai",
+      "scope_note": "Steps and documents follow national rules; fees are Lào Cai's and may differ in other provinces.",
+      "url_template": "https://dichvucong.laocai.gov.vn/trang-chu/tra-cuu/chi-tiet-thu-tuc?ma-thu-tuc={page_id}"
+    }
+  },
+  "procedures": [
+    {"slug": "passport", "title_vi": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)", "title_en": "Ordinary passport (provincial police)", "audience": ["citizen"], "source": "bca", "page_id": "29497", "national_code": "1.001456",
+     "warning": "Source still cites Luật 49/2019/QH14; Luật 118/2025/QH15 amended it from 01/07/2026. Fee note on source refers to an expired rate."},
+    {"slug": "id-card-new", "title_vi": "Cấp thẻ Căn cước cho người từ đủ 14 tuổi trở lên thực hiện tại Công an cấp tỉnh", "title_en": "Citizen ID card, age 14+", "audience": ["citizen"], "source": "bca", "page_id": "26052", "national_code": "2.000200"},
+    {"slug": "id-card-exchange", "title_vi": "Cấp đổi thẻ căn cước (thực hiện tại cấp tỉnh)", "title_en": "Exchange citizen ID card", "audience": ["citizen"], "source": "bca", "page_id": "26094", "national_code": "2.001195"},
+    {"slug": "id-card-reissue", "title_vi": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)", "title_en": "Replace lost/damaged citizen ID card", "audience": ["citizen"], "source": "bca", "page_id": "26093", "national_code": "2.001194"},
+    {"slug": "permanent-residence", "title_vi": "Đăng ký thường trú", "title_en": "Register permanent residence", "audience": ["citizen"], "source": "bca", "page_id": "26360", "national_code": null},
+    {"slug": "temporary-residence", "title_vi": "Đăng ký tạm trú", "title_en": "Register temporary residence", "audience": ["citizen"], "source": "bca", "page_id": "26356", "national_code": "1.004194"},
+    {"slug": "criminal-record", "title_vi": "Cấp phiếu lý lịch tư pháp cho công dân Việt Nam, người nước ngoài đang cư trú tại Việt Nam thực hiện tại Công an cấp tỉnh", "title_en": "Criminal record certificate", "audience": ["citizen", "foreigner"], "source": "bca", "page_id": "61555", "national_code": "3.000333"},
+    {"slug": "vehicle-registration", "title_vi": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh", "title_en": "First vehicle registration and plate", "audience": ["citizen", "foreigner"], "source": "bca", "page_id": "39372", "national_code": null},
+    {"slug": "foreigner-temp-residence-card", "title_vi": "Cấp thẻ tạm trú cho người nước ngoài tại Việt Nam tại Công an cấp tỉnh", "title_en": "Temporary residence card for foreigners", "audience": ["foreigner"], "source": "bca", "page_id": "52392", "national_code": "1.003460",
+     "warning": "Source cites Luật 47/2014/QH13 and 23/2023/QH15; check whether Luật 118/2025/QH15 (from 01/07/2026) changed it."},
+    {"slug": "foreigner-stay-extension", "title_vi": "Gia hạn tạm trú cho người nước ngoài tại Việt Nam (thực hiện tại cấp tỉnh)", "title_en": "Extend a foreigner's stay", "audience": ["foreigner"], "source": "bca", "page_id": "35696", "national_code": "1.001146",
+     "warning": "Same legal-basis caveat as foreigner-temp-residence-card."},
+    {"slug": "birth-registration", "title_vi": "Thủ tục đăng ký khai sinh", "title_en": "Birth registration", "audience": ["citizen"], "source": "laocai", "page_id": "47907", "national_code": "1.001193"},
+    {"slug": "marriage-registration", "title_vi": "Đăng ký kết hôn", "title_en": "Marriage registration", "audience": ["citizen"], "source": "laocai", "page_id": "47905", "national_code": "1.000894"},
+    {"slug": "death-registration", "title_vi": "Thủ tục đăng ký khai tử", "title_en": "Death registration", "audience": ["citizen"], "source": "laocai", "page_id": "47902", "national_code": "1.000656"},
+    {"slug": "marital-status-certificate", "title_vi": "Thủ tục cấp Giấy xác nhận tình trạng hôn nhân", "title_en": "Marital status certificate", "audience": ["citizen"], "source": "laocai", "page_id": "47920", "national_code": "1.004873"},
+    {"slug": "certified-copy", "title_vi": "Chứng thực bản sao từ bản chính giấy tờ, văn bản", "title_en": "Certified copy of an original document", "audience": ["citizen", "foreigner"], "source": "laocai", "page_id": "47936", "national_code": "2.000815"},
+    {"slug": "household-business", "title_vi": "Đăng ký thành lập hộ kinh doanh", "title_en": "Register a household business", "audience": ["citizen", "business"], "source": "laocai", "page_id": "48106", "national_code": "1.001612"},
+    {"slug": "work-permit", "title_vi": "Cấp giấy phép lao động đối với người lao động nước ngoài làm việc tại Việt Nam", "title_en": "Work permit for foreign workers", "audience": ["foreigner", "business"], "source": "laocai", "page_id": "118157", "national_code": "1.014199"}
+  ],
+  "not_yet_covered": [
+    {"title_vi": "Đăng ký thành lập công ty TNHH một thành viên", "reason": "Only Lào Cai page found (page_id 45163) cites superseded Nghị định 01/2021/NĐ-CP instead of 168/2025/NĐ-CP."},
+    {"title_vi": "Cấp, đổi giấy phép lái xe", "reason": "Moved to a separate Bộ Công an portal (dvc-gplx.csgt.bocongan.gov.vn) on 26/03/2025; not checked yet."}
+  ]
+}

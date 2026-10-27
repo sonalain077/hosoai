@@ -1,0 +1,245 @@
+{
+  "slug": "id-card-reissue",
+  "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+  "national_code": "2.001194",
+  "field": {
+    "text": "Cấp, quản lý căn cước",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+      "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+      "document_number": "2.001194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:23.898685Z"
+    }
+  },
+  "agency": {
+    "text": "Phòng cảnh sát quản lý hành chính về trật tự xã hội",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+      "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+      "document_number": "2.001194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:23.898685Z"
+    }
+  },
+  "methods": [
+    {
+      "text": "Trực tiếp",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    },
+    {
+      "text": "Trực tuyến",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "text": "Bước 1:\n+ Công dân đến cơ quan quản lý căn cước của Công an cấp tỉnh đề nghị cấp lại thẻ căn cước hoặc thông qua Cổng dịch vụ công quốc gia, Cổng dịch vụ công Bộ Công an, ứng dụng định danh quốc gia lựa chọn thủ tục cấp lại thẻ căn cước, kiểm tra thông tin của mình được khai thác trong Cơ sở dữ liệu quốc gia về dân cư. Trường hợp thông tin chính xác thì xác nhận chuyển hồ sơ đề nghị cấp lại thẻ căn cước đến cơ quan quản lý căn cước của Công an cấp tỉnh.\n+ Trường hợp người đề nghị cấp lại thẻ căn cước là người đại diện hợp pháp của người dưới 14 tuổi thì hồ sơ đề nghị cấp, cấp đổi, cấp lại thẻ căn cước phải có giấy tờ, tài liệu có giá trị pháp lý chứng minh là người đại diện hợp pháp của người dưới 14 tuổi;\nBước 2: Cán bộ thu nhận thông tin công dân tìm kiếm thông tin trong Cơ sở dữ liệu quốc gia về dân cư để lập hồ sơ cấp lại thẻ căn cước.\nBước 3:\n+ Trường hợp cấp lại thẻ căn cước do bị mất thẻ căn cước hoặc thẻ căn cước bị hư hỏng không sử dụng được thì cán bộ thu nhận sử dụng thông tin về ảnh khuôn mặt, vân tay, mống mắt đã được thu nhận lần gần nhất và các thông tin hiện có trong Cơ sở dữ liệu quốc gia về dân cư, Cơ sở dữ liệu căn cước để cấp lại thẻ căn cước.\n+ Trường hợp cấp lại thẻ căn cước quy định tại điểm b khoản 2 Điều 24 Luật Căn cước (Được trở lại quốc tịch Việt Nam theo quy định của pháp luật về quốc tịch Việt Nam), các bước thực hiện như đối với thủ tục cấp mới thẻ căn cước.\n+ Trường hợp công dân không đủ điều kiện cấp lại thẻ căn cước thì từ chối tiếp nhận và nêu rõ lý do, thông báo về việc từ chối giải quyết thủ tục về căn cước (mẫu CC03 ban hành kèm theo Thông tư số 17/2024/TT-BCA ngày 15/5/2024 của Bộ Công an).\nBước 4: Tiến hành thu nhận vân tay, chụp ảnh khuôn mặt và thu nhận ảnh mống mắt của công dân (áp dụng với trường hợp cấp lại thẻ căn cước quy định tại điểm b khoản 2 Điều 24 Luật Căn cước).\nBước 5: In Phiếu thu nhận thông tin căn cước chuyển cho công dân hoặc người đại diện của người dưới 14 tuổi kiểm tra, ký xác nhận đối với trường hợp công dân trực tiếp đến thực hiện thủ tục cấp lại tại cơ quan quản lý căn cước của Công an cấp tỉnh.\nBước 6: Thu thẻ căn cước cũ (nếu có), thu lệ phí (nếu có) và cấp giấy hẹn trả kết quả giải quyết thủ tục về căn cước (mẫu CC02 ban hành kèm theo Thông tư số 17/2024/TT-BCA ngày 15/5/2024 của Bộ Công an) cho công dân (bản giấy hoặc bản điện tử).\nBước 7: Nhận kết quả trực tiếp tại cơ quan quản lý căn cước của Công an cấp tỉnh hoặc trả qua dịch vụ bưu chính đến địa chỉ theo yêu cầu.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    }
+  ],
+  "processing_time": {
+    "text": "Trực tiếp\n07 Ngày làm việc - Trực tiếp tại địa điểm tiếp dân cơ quan quản lý căn cước của Công an cấp tỉnh (Phòng Cảnh sát Quản lý hành chính về trật tự xã hội, Công an các tỉnh, thành phố trực thuộc Trung ương).\nThời gian tiếp nhận hồ sơ: Giờ hành chính các ngày làm việc từ thứ 2 đến thứ 6 hàng tuần (trừ các ngày nghỉ lễ, tết theo quy định của pháp luật). Trực tuyến\n07 Ngày làm việc - Thực hiện trực tuyến thông qua Cổng dịch vụ công quốc gia, Cổng dịch vụ công Bộ Công an, Ứng dụng định danh quốc gia.\nThời gian tiếp nhận hồ sơ: Giờ hành chính các ngày làm việc từ thứ 2 đến thứ 6 hàng tuần (trừ các ngày nghỉ lễ, tết theo quy định của pháp luật).",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+      "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+      "document_number": "2.001194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:23.898685Z"
+    }
+  },
+  "fee": {
+    "text": "Phí: Trực tiếp Trực tuyến\nLệ phí: 07 Ngày làm việc\nChưa quy định.\n07 Ngày làm việc\nChưa quy định.",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+      "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+      "document_number": "2.001194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:23.898685Z"
+    }
+  },
+  "documents": [
+    {
+      "name": "Phiếu thu nhận thông tin căn cước (Mẫu CC01 ban hành kèm theo Thông tư số 17/2024/TT-BCA của Bộ Công an)",
+      "form_name": "Mẫu CC01 Phiếu thu nhận thông tin căn cước.doc",
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    },
+    {
+      "name": "Phiếu đề nghị giải quyết thủ tục về căn cước (Mẫu DC02 ban hành kèm theo Thông tư số 17/2024/TT-BCA của Bộ Công an)",
+      "form_name": "Mẫu DC02 Phiếu đề nghị giải quyết thủ tục về căn cước.doc",
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    },
+    {
+      "name": "Giấy tờ, tài liệu có giá trị pháp lý chứng minh là người đại diện hợp pháp của người dưới 14 tuổi",
+      "form_name": null,
+      "quantity": "Bản chính: 1, Bản sao: 0",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    },
+    {
+      "name": "Phiếu được tạo lập khi trích xuất thông tin của công dân trong Cơ sở dữ liệu quốc gia về dân cư và in trong quá trình thu nhận hồ sơ căn cước để công dân kiểm tra và ký xác nhận.",
+      "form_name": null,
+      "quantity": null,
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    },
+    {
+      "name": "Trường hợp người đề nghị cấp, cấp đổi, cấp lại thẻ căn cước là người đại diện hợp pháp của người dưới 14 tuổi thì hồ sơ đề nghị cấp, cấp đổi, cấp lại thẻ căn cước phải có giấy tờ, tài liệu có giá trị pháp lý chứng minh là người đại diện hợp pháp của người dưới 14 tuổi.",
+      "form_name": null,
+      "quantity": null,
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    }
+  ],
+  "conditions": {
+    "text": "Không.",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+      "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+      "document_number": "2.001194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:23.898685Z"
+    }
+  },
+  "legal_basis": [
+    {
+      "text": "Luật Căn cước Số: 26/2023/QH15",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    },
+    {
+      "text": "Thông tư quy định chi tiết một số điều và biện pháp thi hành Luật Căn cước Số: 17/2024/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    },
+    {
+      "text": "Nghị định của Chính phủ: Quy định chi tiết một số điều và biện pháp thi hành Luật Căn cước Số: 70/2024/NĐ-CP",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    },
+    {
+      "text": "Thông tư 16/2024/TT-BCA quy định về mẫu thẻ căn cước, mẫu giấy chứng nhận căn cước Số: 16/2024/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    },
+    {
+      "text": "Thông tư quy định quy định về quy trình cấp, cấp đổi, cấp lại thẻ căn cước, giấy chứng nhận căn cước Số: 18/2024/TT-BCA",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    }
+  ],
+  "result": {
+    "text": "Thẻ căn cước",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+      "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+      "document_number": "2.001194",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:23.898685Z"
+    }
+  },
+  "forms": [
+    {
+      "label": "Tờ khai Căn cước công dân (ký hiệu là CC01)",
+      "url": "https://dichvucong.bocongan.gov.vn/public_dir/tttl/10/giayto/2020_11/1604372463_Mau_CC01.doc",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    },
+    {
+      "label": "Phiếu thu nhận thông tin căn cước công dân (ký hiệu là CC02)",
+      "url": "https://dichvucong.bocongan.gov.vn/public_dir/tttl/10/giayto/2020_11/1604372319_Mau_CC02.doc",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+        "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+        "document_number": "2.001194",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:23.898685Z"
+      }
+    }
+  ],
+  "warnings": [],
+  "source": {
+    "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26093",
+    "title": "Cấp lại thẻ căn cước (thực hiện tại cấp tỉnh)",
+    "document_number": "2.001194",
+    "publisher": "Cổng Dịch vụ công - Bộ Công an",
+    "retrieved_at": "2026-10-26T10:42:23.898685Z"
+  }
+}

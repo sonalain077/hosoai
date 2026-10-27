@@ -1,0 +1,248 @@
+{
+  "slug": "vehicle-registration",
+  "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+  "national_code": "1.000377",
+  "field": {
+    "text": "Đăng ký, quản lý phương tiện giao thông cơ giới đường bộ",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+      "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+      "document_number": "1.000377",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:34.961062Z"
+    }
+  },
+  "agency": {
+    "text": "Phòng Cảnh sát giao thông",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+      "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+      "document_number": "1.000377",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:34.961062Z"
+    }
+  },
+  "methods": [
+    {
+      "text": "+ Chủ xe thực hiện kê khai đăng ký xe trên cổng dịch vụ công hoặc Ứng dụng định danh quốc gia. Cơ quan đăng ký xe tiếp nhận hồ sơ trong giờ hành chính.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "text": "+ Trả kết quả tại cơ quan đăng ký xe hoặc qua dịch vụ bưu chính công ích.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "text": "Bước 1: Chủ xe đăng nhập trên cổng dịch vụ công và kê khai chính xác, đầy đủ, trung thực các nội dung quy định trong giấy khai đăng ký xe, ký số. Trường hợp không có ký số thì chủ xe in giấy khai đăng ký xe từ cổng dịch vụ công, ký, ghi rõ họ, tên và đóng dấu (nếu là cơ quan, tổ chức). Trường hợp không thực hiện được trên cổng dịch vụ công thì chủ xe kê khai giấy khai đăng ký xe trực tiếp tại cơ quan đăng ký xe.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "text": "Bước 2: Sau khi kê khai thành công, chủ xe nhận mã hồ sơ đăng ký xe trực tuyến, lịch hẹn giải quyết hồ sơ do cổng dịch vụ công thông báo qua tin nhắn điện thoại hoặc qua địa chỉ thư điện tử để làm thủ tục đăng ký xe;",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "text": "Bước 3: Chủ xe đưa xe đến cơ quan đăng ký xe để kiểm tra xe, cung cấp mã hồ sơ đăng ký xe và nộp các giấy tờ quy định cho cơ quan đăng ký xe; đăng ký sử dụng dịch vụ bưu chính công ích (nếu có nhu cầu) để nhận chứng nhận đăng ký xe, biển số xe;",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "text": "Bước 3: Cán bộ đăng ký xe kiểm tra giấy tờ của chủ xe; giấy tờ của xe, đối chiếu với thông tin dữ liệu của chủ xe trên hệ thống đăng ký, quản lý xe và tiến hành kiểm tra thực tế xe theo quy định.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "text": "Bước 4: Sau khi cán bộ đăng ký xe kiểm tra hồ sơ xe, thực tế xe bảo đảm hợp lệ thì được cấp biển số theo quy định sau: Cấp biển số mới đối với trường hợp chủ xe chưa được cấp biển số định danh hoặc đã có biển số định danh nhưng đang đăng ký cho xe khác; Cấp biển số định danh đối với trường hợp chủ xe có biển số định danh đã được thu hồi từ ngày 15/8/2023, cấp biển số xe trúng đấu giá;",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "text": "Trường hợp hồ sơ xe, xe không bảo đảm đúng quy định thì bổ sung, hoàn thiện hồ sơ theo hướng dẫn của cán bộ đăng ký xe tại phiếu hướng dẫn hồ sơ;",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "text": "Bước 5: Chủ xe nhận giấy hẹn trả kết quả, nộp lệ phí đăng ký xe và nhận biển số xe (trường hợp được cấp biển số định danh mới hoặc trường hợp chủ xe đề nghị sử dụng lại biển số định danh cũ đã thu hồi, nếu cơ quan đăng ký xe chưa tiêu hủy biển số đó theo quy định).",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "text": "Bước 7: Chủ xe lựa chọn việc nhận kết quả tại cơ quan đăng ký xe hoặc qua dịch vụ bưu chính công ích.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    }
+  ],
+  "processing_time": {
+    "text": "+ Cấp chứng nhận đăng ký xe: Không quá 02 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ.\n+ Cấp mới biển số xe: Cấp ngay sau khi nhận đủ hồ sơ hợp lệ;\n+ Cấp mới biển số xe trúng đấu giá, cấp biển số xe định danh: Không quá 07 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ;\nThời hạn giải quyết đăng ký xe được tính từ khi nhận đủ hồ sơ hợp lệ và chủ xe hoàn thành việc nộp lệ phí đăng ký xe.",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+      "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+      "document_number": "1.000377",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:34.961062Z"
+    }
+  },
+  "fee": {
+    "text": "Phí: Không\nLệ phí: Thông tư số 60/2023/TT-BTC ngày 07/9/2023 của Bộ Tài chính quy định mức thu, chế độ thu, nộp, miễn, quản lý lệ phí đăng ký, cấp biển phương tiện giao thông cơ giới đường bộ.",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+      "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+      "document_number": "1.000377",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:34.961062Z"
+    }
+  },
+  "documents": [
+    {
+      "name": "1. Giấy khai đăng ký xe (mẫu ĐKX10 ban hành kèm theo Thông tư số 79/2024/TT-BCA ngày 15/11/2024 của Bộ trưởng Bộ Công an);",
+      "form_name": null,
+      "quantity": null,
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "name": "2. Giấy tờ của chủ xe theo quy định;",
+      "form_name": null,
+      "quantity": null,
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "name": "3. Giấy tờ của xe: Chứng nhận nguồn gốc xe; Chứng nhận quyền sở hữu hợp pháp; Chứng từ hoàn thành nghĩa vụ tài chính.",
+      "form_name": null,
+      "quantity": null,
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    }
+  ],
+  "conditions": {
+    "text": "Không",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+      "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+      "document_number": "1.000377",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:34.961062Z"
+    }
+  },
+  "legal_basis": [
+    {
+      "text": "+ Luật Trật tự, an toàn giao thông đường bộ (Luật số 36/2024/QH15, ngày 27/06/2024);",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "text": "+ Thông tư số 79/2024/TT-BCA ngày 15/11/2024 của Bộ trưởng Bộ Công an quy định về cấp, thu hồi chứng nhận đăng ký, biển số xe cơ giới, xe máy chuyên dùng.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    },
+    {
+      "text": "+ Thông tư số 60/2023/TT-BTC ngày 07/9/2023 của Bộ Tài chính quy định mức thu, chế độ thu, nộp, miễn, quản lý lệ phí đăng ký, cấp biển phương tiện giao thông cơ giới đường bộ.",
+      "source": {
+        "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+        "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+        "document_number": "1.000377",
+        "publisher": "Cổng Dịch vụ công - Bộ Công an",
+        "retrieved_at": "2026-10-26T10:42:34.961062Z"
+      }
+    }
+  ],
+  "result": {
+    "text": "Biển số xe\nGiấy chứng nhận đăng ký xe",
+    "source": {
+      "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+      "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+      "document_number": "1.000377",
+      "publisher": "Cổng Dịch vụ công - Bộ Công an",
+      "retrieved_at": "2026-10-26T10:42:34.961062Z"
+    }
+  },
+  "forms": [],
+  "warnings": [],
+  "source": {
+    "url": "https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=39372",
+    "title": "Đăng ký, cấp biển số xe lần đầu thực hiện tại Công an cấp tỉnh",
+    "document_number": "1.000377",
+    "publisher": "Cổng Dịch vụ công - Bộ Công an",
+    "retrieved_at": "2026-10-26T10:42:34.961062Z"
+  }
+}
