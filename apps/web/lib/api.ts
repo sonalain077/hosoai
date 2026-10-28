@@ -2,7 +2,9 @@ import type {
   AgentReply,
   FormDetail,
   FormSummary,
+  LearnResult,
   MatchResult,
+  OfficialForm,
   Procedure,
   ProcedureSummary,
   Profile,
@@ -118,3 +120,21 @@ export async function fillForm(id: string, values: Record<string, string>): Prom
 
 export const formHref = (id: string, procedure: string) =>
   `/forms/${encodeURIComponent(id)}?procedure=${encodeURIComponent(procedure)}`;
+
+export function officialForms(slug: string): Promise<OfficialForm[]> {
+  return request(`/procedures/${encodeURIComponent(slug)}/official-forms`);
+}
+
+/** Ask the form-learning agent to read an official form (20-90 s with a local model). */
+export async function learnForm(procedure: string, formIndex: number): Promise<LearnResult> {
+  const resp = await fetch(`${API_URL}/forms/learn`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ procedure, form_index: formIndex }),
+  });
+  if (!resp.ok) {
+    const body = (await resp.json().catch(() => null)) as { detail?: { message?: string } } | null;
+    throw new ApiError(body?.detail?.message ?? `learn → ${resp.status}`, resp.status);
+  }
+  return (await resp.json()) as LearnResult;
+}

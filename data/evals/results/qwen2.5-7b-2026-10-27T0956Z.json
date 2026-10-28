@@ -1,0 +1,1038 @@
+{
+  "model": "qwen2.5:7b",
+  "run": "2026-10-27T0956Z",
+  "summary": {
+    "routing": {
+      "cases": 66,
+      "accuracy_in_scope_pct": 100.0,
+      "correct_not_found_pct": 92.9,
+      "wrong_procedure_on_out_of_scope": 1,
+      "missed_in_scope_as_not_found": 0,
+      "adversarial_correct": "4/4",
+      "model_invented_slugs": 0,
+      "invented_slugs_shown_to_user": 0,
+      "invalid_json_replies": 12,
+      "by_category": {
+        "adversarial": "4/4",
+        "ambiguous": "4/4",
+        "direct": "20/20",
+        "off_topic": "3/3",
+        "out_of_scope": "10/11",
+        "paraphrase": "24/24"
+      },
+      "by_language_in_scope": {
+        "en": "17/17",
+        "fr": "5/5",
+        "ko": "2/2",
+        "vi": "23/23",
+        "zh": "1/1"
+      },
+      "latency_median_s": 0.23,
+      "latency_p95_s": 0.29
+    }
+  },
+  "details": {
+    "routing": [
+      {
+        "case_id": "001",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "passport"
+        ],
+        "raw_slugs": [
+          "passport"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"passport\"]}",
+        "correct": true,
+        "latency_s": 0.28179490300044563
+      },
+      {
+        "case_id": "002",
+        "category": "paraphrase",
+        "lang": "vi",
+        "candidates": [
+          "passport"
+        ],
+        "raw_slugs": [
+          "passport"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"passport\"]}",
+        "correct": true,
+        "latency_s": 0.22221947600064595
+      },
+      {
+        "case_id": "003",
+        "category": "direct",
+        "lang": "en",
+        "candidates": [
+          "passport"
+        ],
+        "raw_slugs": [
+          "passport"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"passport\"]}",
+        "correct": true,
+        "latency_s": 0.21864465500038932
+      },
+      {
+        "case_id": "004",
+        "category": "paraphrase",
+        "lang": "fr",
+        "candidates": [
+          "passport"
+        ],
+        "raw_slugs": [
+          "passport"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"passport\"]}",
+        "correct": true,
+        "latency_s": 0.22232867999991868
+      },
+      {
+        "case_id": "005",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "id-card-new"
+        ],
+        "raw_slugs": [
+          "id-card-new"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"id-card-new\"]}",
+        "correct": true,
+        "latency_s": 0.29295698999976594
+      },
+      {
+        "case_id": "006",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "id-card-new"
+        ],
+        "raw_slugs": [
+          "id-card-new"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"id-card-new\"]}",
+        "correct": true,
+        "latency_s": 0.25365541100018163
+      },
+      {
+        "case_id": "007",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "id-card-exchange"
+        ],
+        "raw_slugs": [
+          "id-card-exchange"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"id-card-exchange\"]}",
+        "correct": true,
+        "latency_s": 0.27656848399965384
+      },
+      {
+        "case_id": "008",
+        "category": "paraphrase",
+        "lang": "vi",
+        "candidates": [
+          "id-card-exchange"
+        ],
+        "raw_slugs": [
+          "id-card-exchange"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"id-card-exchange\"]}",
+        "correct": true,
+        "latency_s": 0.3594878059993789
+      },
+      {
+        "case_id": "009",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "id-card-reissue"
+        ],
+        "raw_slugs": [
+          "id-card-reissue"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"id-card-reissue\"]}",
+        "correct": true,
+        "latency_s": 0.2579297590000351
+      },
+      {
+        "case_id": "010",
+        "category": "direct",
+        "lang": "en",
+        "candidates": [
+          "id-card-reissue"
+        ],
+        "raw_slugs": [
+          "id-card-reissue"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"id-card-reissue\"]}",
+        "correct": true,
+        "latency_s": 0.24815213500005484
+      },
+      {
+        "case_id": "011",
+        "category": "paraphrase",
+        "lang": "fr",
+        "candidates": [
+          "id-card-reissue"
+        ],
+        "raw_slugs": [
+          "id-card-reissue"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"id-card-reissue\"]}",
+        "correct": true,
+        "latency_s": 0.27641624599982606
+      },
+      {
+        "case_id": "012",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "permanent-residence"
+        ],
+        "raw_slugs": [
+          "permanent-residence"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"permanent-residence\"]}",
+        "correct": true,
+        "latency_s": 0.26565355799993995
+      },
+      {
+        "case_id": "013",
+        "category": "paraphrase",
+        "lang": "vi",
+        "candidates": [
+          "permanent-residence"
+        ],
+        "raw_slugs": [
+          "permanent-residence"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"permanent-residence\"]}",
+        "correct": true,
+        "latency_s": 0.2455858100001933
+      },
+      {
+        "case_id": "014",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "permanent-residence"
+        ],
+        "raw_slugs": [
+          "permanent-residence"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"permanent-residence\"]}",
+        "correct": true,
+        "latency_s": 0.2426869410001018
+      },
+      {
+        "case_id": "015",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "temporary-residence"
+        ],
+        "raw_slugs": [
+          "temporary-residence"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"temporary-residence\"]}",
+        "correct": true,
+        "latency_s": 0.2685509650000313
+      },
+      {
+        "case_id": "016",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "temporary-residence"
+        ],
+        "raw_slugs": [
+          "temporary-residence"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"temporary-residence\"]}",
+        "correct": true,
+        "latency_s": 0.2835041580001416
+      },
+      {
+        "case_id": "017",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "criminal-record"
+        ],
+        "raw_slugs": [
+          "criminal-record"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"criminal-record\"]}",
+        "correct": true,
+        "latency_s": 0.22593039700041118
+      },
+      {
+        "case_id": "018",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "criminal-record"
+        ],
+        "raw_slugs": [
+          "criminal-record"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"criminal-record\"]}",
+        "correct": true,
+        "latency_s": 0.2229395950007529
+      },
+      {
+        "case_id": "019",
+        "category": "paraphrase",
+        "lang": "fr",
+        "candidates": [
+          "criminal-record"
+        ],
+        "raw_slugs": [
+          "criminal-record"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"criminal-record\"]}",
+        "correct": true,
+        "latency_s": 0.22432153000045219
+      },
+      {
+        "case_id": "020",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "vehicle-registration"
+        ],
+        "raw_slugs": [
+          "vehicle-registration"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"vehicle-registration\"]}",
+        "correct": true,
+        "latency_s": 0.2264226150000468
+      },
+      {
+        "case_id": "021",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "vehicle-registration"
+        ],
+        "raw_slugs": [
+          "vehicle-registration"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"vehicle-registration\"]}",
+        "correct": true,
+        "latency_s": 0.23352227099985612
+      },
+      {
+        "case_id": "022",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "foreigner-temp-residence-card"
+        ],
+        "raw_slugs": [
+          "foreigner-temp-residence-card"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"foreigner-temp-residence-card\"]}",
+        "correct": true,
+        "latency_s": 0.2934065030003694
+      },
+      {
+        "case_id": "023",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "foreigner-temp-residence-card",
+          "work-permit"
+        ],
+        "raw_slugs": [
+          "foreigner-temp-residence-card",
+          "work-permit"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"foreigner-temp-residence-card\", \"work-permit\"]}",
+        "correct": true,
+        "latency_s": 0.4004398739998578
+      },
+      {
+        "case_id": "024",
+        "category": "paraphrase",
+        "lang": "ko",
+        "candidates": [
+          "foreigner-temp-residence-card"
+        ],
+        "raw_slugs": [
+          "foreigner-temp-residence-card"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"foreigner-temp-residence-card\"]}",
+        "correct": true,
+        "latency_s": 0.3080506129999776
+      },
+      {
+        "case_id": "025",
+        "category": "direct",
+        "lang": "en",
+        "candidates": [
+          "foreigner-stay-extension"
+        ],
+        "raw_slugs": [
+          "foreigner-stay-extension"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"foreigner-stay-extension\"]}",
+        "correct": true,
+        "latency_s": 0.27636642000015854
+      },
+      {
+        "case_id": "026",
+        "category": "paraphrase",
+        "lang": "fr",
+        "candidates": [
+          "foreigner-stay-extension"
+        ],
+        "raw_slugs": [
+          "foreigner-stay-extension"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"foreigner-stay-extension\"]}",
+        "correct": true,
+        "latency_s": 0.28017405700029485
+      },
+      {
+        "case_id": "027",
+        "category": "paraphrase",
+        "lang": "zh",
+        "candidates": [
+          "foreigner-stay-extension"
+        ],
+        "raw_slugs": [
+          "foreigner-stay-extension"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"foreigner-stay-extension\"]}",
+        "correct": true,
+        "latency_s": 0.27639532600005623
+      },
+      {
+        "case_id": "028",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "foreigner-stay-extension"
+        ],
+        "raw_slugs": [
+          "foreigner-stay-extension"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"foreigner-stay-extension\"]}",
+        "correct": true,
+        "latency_s": 0.27450929499991616
+      },
+      {
+        "case_id": "029",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "birth-registration"
+        ],
+        "raw_slugs": [
+          "birth-registration"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"birth-registration\"]}",
+        "correct": true,
+        "latency_s": 0.21153734200015606
+      },
+      {
+        "case_id": "030",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "birth-registration"
+        ],
+        "raw_slugs": [
+          "birth-registration"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"birth-registration\"]}",
+        "correct": true,
+        "latency_s": 0.20756307299961918
+      },
+      {
+        "case_id": "031",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "death-registration"
+        ],
+        "raw_slugs": [
+          "death-registration"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"death-registration\"]}",
+        "correct": true,
+        "latency_s": 0.20629408199965837
+      },
+      {
+        "case_id": "032",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "death-registration"
+        ],
+        "raw_slugs": [
+          "death-registration"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"death-registration\"]}",
+        "correct": true,
+        "latency_s": 0.20991180500004702
+      },
+      {
+        "case_id": "033",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "marriage-registration"
+        ],
+        "raw_slugs": [
+          "marriage-registration"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"marriage-registration\"]}",
+        "correct": true,
+        "latency_s": 0.22707104700020864
+      },
+      {
+        "case_id": "034",
+        "category": "paraphrase",
+        "lang": "fr",
+        "candidates": [
+          "marriage-registration"
+        ],
+        "raw_slugs": [
+          "marriage-registration"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"marriage-registration\"]}",
+        "correct": true,
+        "latency_s": 0.22925844499968662
+      },
+      {
+        "case_id": "035",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "marital-status-certificate"
+        ],
+        "raw_slugs": [
+          "marital-status-certificate"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"marital-status-certificate\"]}",
+        "correct": true,
+        "latency_s": 0.26500078499975643
+      },
+      {
+        "case_id": "036",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "marital-status-certificate"
+        ],
+        "raw_slugs": [
+          "marital-status-certificate"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"marital-status-certificate\"]}",
+        "correct": true,
+        "latency_s": 0.2686999930001548
+      },
+      {
+        "case_id": "037",
+        "category": "paraphrase",
+        "lang": "vi",
+        "candidates": [
+          "marital-status-certificate"
+        ],
+        "raw_slugs": [
+          "marital-status-certificate"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"marital-status-certificate\"]}",
+        "correct": true,
+        "latency_s": 0.2825677840000935
+      },
+      {
+        "case_id": "038",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "certified-copy"
+        ],
+        "raw_slugs": [
+          "certified-copy"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"certified-copy\"]}",
+        "correct": true,
+        "latency_s": 0.24021194700071646
+      },
+      {
+        "case_id": "039",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "certified-copy"
+        ],
+        "raw_slugs": [
+          "certified-copy"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"certified-copy\"]}",
+        "correct": true,
+        "latency_s": 0.2402836519995617
+      },
+      {
+        "case_id": "040",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "household-business"
+        ],
+        "raw_slugs": [
+          "household-business"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"household-business\"]}",
+        "correct": true,
+        "latency_s": 0.2467527720000362
+      },
+      {
+        "case_id": "041",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "household-business"
+        ],
+        "raw_slugs": [
+          "household-business"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"household-business\"]}",
+        "correct": true,
+        "latency_s": 0.2394527869992089
+      },
+      {
+        "case_id": "042",
+        "category": "direct",
+        "lang": "vi",
+        "candidates": [
+          "work-permit"
+        ],
+        "raw_slugs": [
+          "work-permit"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"work-permit\"]}",
+        "correct": true,
+        "latency_s": 0.227056332999382
+      },
+      {
+        "case_id": "043",
+        "category": "paraphrase",
+        "lang": "en",
+        "candidates": [
+          "work-permit"
+        ],
+        "raw_slugs": [
+          "work-permit"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"work-permit\"]}",
+        "correct": true,
+        "latency_s": 0.2282478759998412
+      },
+      {
+        "case_id": "044",
+        "category": "paraphrase",
+        "lang": "ko",
+        "candidates": [
+          "work-permit"
+        ],
+        "raw_slugs": [
+          "work-permit"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"work-permit\"]}",
+        "correct": true,
+        "latency_s": 0.22967119299937622
+      },
+      {
+        "case_id": "045",
+        "category": "ambiguous",
+        "lang": "vi",
+        "candidates": [
+          "id-card-new"
+        ],
+        "raw_slugs": [
+          "id-card-new"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"id-card-new\"]}",
+        "correct": true,
+        "latency_s": 0.23125892899952305
+      },
+      {
+        "case_id": "046",
+        "category": "ambiguous",
+        "lang": "vi",
+        "candidates": [
+          "id-card-reissue"
+        ],
+        "raw_slugs": [
+          "id-card-reissue"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"id-card-reissue\"]}",
+        "correct": true,
+        "latency_s": 0.2741186210005253
+      },
+      {
+        "case_id": "047",
+        "category": "ambiguous",
+        "lang": "en",
+        "candidates": [
+          "permanent-residence",
+          "temporary-residence"
+        ],
+        "raw_slugs": [
+          "permanent-residence",
+          "temporary-residence"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"permanent-residence\", \"temporary-residence\"]}",
+        "correct": true,
+        "latency_s": 0.3515218940001432
+      },
+      {
+        "case_id": "048",
+        "category": "ambiguous",
+        "lang": "en",
+        "candidates": [
+          "foreigner-stay-extension"
+        ],
+        "raw_slugs": [
+          "foreigner-stay-extension"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"foreigner-stay-extension\"]}",
+        "correct": true,
+        "latency_s": 0.2738341179992858
+      },
+      {
+        "case_id": "049",
+        "category": "out_of_scope",
+        "lang": "vi",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.06219367300036538
+      },
+      {
+        "case_id": "050",
+        "category": "out_of_scope",
+        "lang": "en",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.06201499000053445
+      },
+      {
+        "case_id": "051",
+        "category": "out_of_scope",
+        "lang": "vi",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.060404777000258036
+      },
+      {
+        "case_id": "052",
+        "category": "out_of_scope",
+        "lang": "vi",
+        "candidates": [
+          "household-business"
+        ],
+        "raw_slugs": [
+          "household-business"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"household-business\"]}",
+        "correct": false,
+        "latency_s": 0.23476536100042722
+      },
+      {
+        "case_id": "053",
+        "category": "out_of_scope",
+        "lang": "vi",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.07194950000030076
+      },
+      {
+        "case_id": "054",
+        "category": "out_of_scope",
+        "lang": "vi",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.06777068399969721
+      },
+      {
+        "case_id": "055",
+        "category": "out_of_scope",
+        "lang": "en",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.06096867999985989
+      },
+      {
+        "case_id": "056",
+        "category": "out_of_scope",
+        "lang": "fr",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.05965167399972415
+      },
+      {
+        "case_id": "057",
+        "category": "out_of_scope",
+        "lang": "vi",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.058393096000145306
+      },
+      {
+        "case_id": "058",
+        "category": "out_of_scope",
+        "lang": "en",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.0583229690000735
+      },
+      {
+        "case_id": "059",
+        "category": "out_of_scope",
+        "lang": "vi",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.05958253500011779
+      },
+      {
+        "case_id": "060",
+        "category": "off_topic",
+        "lang": "vi",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.060344630000145116
+      },
+      {
+        "case_id": "061",
+        "category": "off_topic",
+        "lang": "en",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": false,
+        "raw_reply": "[]",
+        "correct": true,
+        "latency_s": 0.063865612999507
+      },
+      {
+        "case_id": "062",
+        "category": "off_topic",
+        "lang": "en",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{}",
+        "correct": true,
+        "latency_s": 0.06294527600039146
+      },
+      {
+        "case_id": "063",
+        "category": "adversarial",
+        "lang": "en",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\":[]}",
+        "correct": true,
+        "latency_s": 0.1526460989998668
+      },
+      {
+        "case_id": "064",
+        "category": "adversarial",
+        "lang": "vi",
+        "candidates": [],
+        "raw_slugs": [],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{}",
+        "correct": true,
+        "latency_s": 0.07103397599985328
+      },
+      {
+        "case_id": "065",
+        "category": "adversarial",
+        "lang": "en",
+        "candidates": [
+          "passport"
+        ],
+        "raw_slugs": [
+          "passport"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"passport\"]}",
+        "correct": true,
+        "latency_s": 0.1980307960002392
+      },
+      {
+        "case_id": "066",
+        "category": "adversarial",
+        "lang": "vi",
+        "candidates": [
+          "passport"
+        ],
+        "raw_slugs": [
+          "passport"
+        ],
+        "invented": [],
+        "valid_json": true,
+        "raw_reply": "{\"slugs\": [\"passport\"]}",
+        "correct": true,
+        "latency_s": 0.20556352600033279
+      }
+    ]
+  }
+}

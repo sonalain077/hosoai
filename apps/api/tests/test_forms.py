@@ -230,3 +230,17 @@ def test_na5_dates_and_split_labels() -> None:
     # "3- Lý do Reason(s)": italic part included in the label
     x_reason, reason_end = _word_after(pdf, 1, "Reason(s)", "Du")
     assert x_reason >= reason_end
+
+
+def test_name_parts_from_full_name() -> None:
+    from hosoai.forms.models import FormField
+    from hosoai.forms.registry import format_profile_value
+    from hosoai.profile.models import ProfileData
+
+    p = ProfileData(full_name="Nguyễn Văn Thử")
+    family = FormField(key="a", label="Họ", profile_key="full_name", transform="family_name")
+    given = FormField(
+        key="b", label="tên", profile_key="full_name", transform="given_names", uppercase=True
+    )
+    assert format_profile_value(family, p) == "Nguyễn"
+    assert format_profile_value(given, p) == "VĂN THỬ"

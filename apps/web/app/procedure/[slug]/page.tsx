@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 
 import { DocumentChecklist } from "@/components/DocumentChecklist";
 import { FormLinks } from "@/components/FormLinks";
+import { OfficialForms } from "@/components/OfficialForms";
 import { ItemSource, SourceNote } from "@/components/SourceNote";
-import { getProcedure } from "@/lib/api";
+import { getProcedure, officialForms } from "@/lib/api";
 import { citesOtherPage, stripStepPrefix } from "@/lib/format";
 import type { Procedure, Source, SourcedText } from "@/lib/types";
 
@@ -163,24 +164,29 @@ function Unknown() {
   return <p className="text-muted">Trang chính thức không ghi mục này. Chúng tôi không đoán.</p>;
 }
 
-function Forms({ p }: { p: Procedure }) {
+async function Forms({ p }: { p: Procedure }) {
   if (p.forms.length === 0) return null;
+  const forms = await officialForms(p.slug).catch(() => null);
   return (
     <Section title="Biểu mẫu" gloss="Official forms">
-      <ul className="space-y-2">
-        {p.forms.map((f, i) => (
-          <li key={i}>
-            <a
-              href={f.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-serif text-pen underline underline-offset-4"
-            >
-              {f.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+      {forms ? (
+        <OfficialForms slug={p.slug} forms={forms} />
+      ) : (
+        <ul className="space-y-2">
+          {p.forms.map((f, i) => (
+            <li key={i}>
+              <a
+                href={f.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-serif text-pen underline underline-offset-4"
+              >
+                {f.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </Section>
   );
 }

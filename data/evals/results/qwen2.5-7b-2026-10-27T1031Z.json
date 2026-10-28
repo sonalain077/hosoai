@@ -1,0 +1,74 @@
+{
+  "model": "qwen2.5:7b",
+  "run": "2026-10-27T1031Z",
+  "summary": {
+    "form_learning": {
+      "CT01": {
+        "human_fields": 15,
+        "learned_fields": 0,
+        "human_fields_found": 0,
+        "profile_mappings_correct": "0/9",
+        "rounds": 4
+      },
+      "NA5": {
+        "human_fields": 21,
+        "learned_fields": 11,
+        "human_fields_found": 8,
+        "profile_mappings_correct": "3/8",
+        "rounds": 4
+      }
+    }
+  },
+  "details": {
+    "form_learning": [
+      {
+        "form": "CT01",
+        "human_fields": 15,
+        "learned_fields": 0,
+        "human_fields_found": 0,
+        "profile_mappings_correct": "0/9",
+        "rounds": 4,
+        "missed_labels": [
+          "Kính gửi",
+          "1. Họ, chữ đệm và tên:",
+          "2. Ngày, tháng, năm sinh:",
+          "3. Giới tính:",
+          "4. Số định danh cá nhân/CMND:",
+          "5. Số điện thoại liên hệ:",
+          "6. Email:",
+          "7. Nơi thường trú:",
+          "8. Nơi tạm trú:",
+          "9. Nơi ở hiện tại:",
+          "10. Nghề nghiệp,  nơi làm việc:",
+          "11. Họ, chữ đệm và tên chủ hộ:",
+          "12. Quan hệ với chủ hộ:",
+          "13. Số định danh cá nhân/CMND của chủ hộ:",
+          "14. Nội dung đề nghị"
+        ]
+      },
+      {
+        "form": "NA5",
+        "human_fields": 21,
+        "learned_fields": 11,
+        "human_fields_found": 8,
+        "profile_mappings_correct": "3/8",
+        "rounds": 4,
+        "missed_labels": [
+          "2- Giới tính:",
+          "4- Quốc tịch gốc:",
+          "5- Quốc tịch hiện nay:",
+          "6- Nghề nghiệp/chức vụ:",
+          "7- Hộ chiếu/giấy tờ có giá trị đi lại quốc tế số:",
+          "loại (2):",
+          "Cơ quan cấp:",
+          "có giá trị đến ngày:",
+          "qua cửa khẩu:",
+          "1- Tên cơ quan, tổ chức",
+          "Địa chỉ Address",
+          "Contact telephone number/Email",
+          "2- Gia hạn tạm trú đến ngày:"
+        ]
+      }
+    ]
+  }
+}

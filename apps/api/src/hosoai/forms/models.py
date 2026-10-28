@@ -36,12 +36,16 @@ class FormField(BaseModel):
     separators: list[str] = ["/", "/"]  # date_parts: printed words between day, month, year
     choices: dict[str, str] | None = None  # choice: value -> printed option to tick
     uppercase: bool = False  # the form asks for capital letters
+    # Part of a profile value: Vietnamese "Họ" is the first word of the full name,
+    # "Chữ đệm và tên" the rest.
+    transform: Literal["family_name", "given_names"] | None = None
     extra_profile_keys: list[ProfileKey] = []  # joined with " / " (e.g. phone / email)
     widget: str | None = None  # AcroForm field name, for mode="acroform"
     max_chars: int | None = None
     x_offset: float = 0  # extra space after the label (e.g. a superscript note marker)
     font_size: float | None = None  # for lines printed smaller than usual
     from_procedure_title: bool = False  # prefill with the official title of the procedure
+    fit_width: float | None = None  # shrink the text (down to MIN_FONT_SIZE) to fit this width
     below_x: float | None = None  # dotted line is on the next line, starting at this x (pt)
 
 
@@ -56,6 +60,10 @@ class FormSpec(BaseModel):
     fields: list[FormField]
     notes: list[str] = []  # known limits of this spec
     preview_pages: int = 1  # pages shown in the on-screen preview
+    # "draft": fields were found and mapped by the form-learning agent and checked by code,
+    # but no human has reviewed them yet. The UI says so.
+    status: Literal["reviewed", "draft"] = "reviewed"
+    learned: dict[str, object] | None = None  # how the agent built this spec (model, checks)
 
 
 class FormSummary(BaseModel):

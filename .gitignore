@@ -8,3 +8,4 @@ __pycache__/
 node_modules/
 .next/
 *:Zone.Identifier
+data/forms/.learning-*/

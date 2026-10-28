@@ -13,6 +13,9 @@ from hosoai.agent import loop
 from hosoai.agent.matcher import MatchResult, match_procedure
 from hosoai.agent.sessions import SessionStore, get_sessions
 from hosoai.forms.fill import FieldNotFound, fill_pdf, render_page_png
+from hosoai.forms.learn.agent import LearnReport
+from hosoai.forms.learn.fetch import FetchError
+from hosoai.forms.learn.service import LearnError, learn_procedure_form
 from hosoai.forms.models import FormSpec, FormSummary
 from hosoai.forms.registry import FormRegistry, get_forms, prefill
 from hosoai.llm import LLMClient, OpenAICompatibleClient
@@ -216,3 +219,70 @@ def fill_form(form_id: str, body: FillRequest, forms: Forms) -> Response:
         media_type="application/pdf",
         headers={"Content-Disposition": f'inline; filename="{spec.code}-da-dien.pdf"'},
     )
+
+
+class OfficialForm(BaseModel):
+    index: int
+    label: str  # as linked on the official procedure page
+    url: str
+    form_id: str | None  # set when the app can already fill it
+    status: str | None  # "reviewed" | "draft"
+
+
+@app.get("/procedures/{slug}/official-forms")
+def official_forms(slug: str, store: Store, forms: Forms) -> list[OfficialForm]:
+    """Forms linked from the official page, and which ones the app can already fill."""
+    p = store.get(slug)
+    if p is None:
+        raise HTTPException(status_code=404, detail={"code": "not_found_in_official_sources"})
+    known = {}
+    for summary in forms.list():
+        spec = forms.get(summary.id)
+        if spec is not None:
+            known[str(spec.source.url)] = spec
+    out = []
+    for i, f in enumerate(p.forms):
+        spec = known.get(str(f.url))
+        out.append(
+            OfficialForm(
+                index=i,
+                label=f.label,
+                url=str(f.url),
+                form_id=spec.id if spec else None,
+                status=spec.status if spec else None,
+            )
+        )
+    return out
+
+
+class LearnRequest(BaseModel):
+    procedure: str
+    form_index: int = Field(ge=0)
+    force: bool = False
+
+
+class LearnResult(BaseModel):
+    form: FormSummary
+    report: LearnReport
+
+
+@app.post("/forms/learn")
+def learn_form(body: LearnRequest, store: Store, llm: LLM) -> LearnResult:
+    """Let the form-learning agent read an official form. Takes 20-90 s with a local model.
+
+    Downloads only files linked from the official procedure page (.gov.vn). The result is a
+    DRAFT spec: every field was checked on the official PDF, but no human has reviewed it.
+    """
+    p = store.get(body.procedure)
+    if p is None:
+        raise HTTPException(status_code=404, detail={"code": "not_found_in_official_sources"})
+    try:
+        spec, report = learn_procedure_form(
+            p, body.form_index, llm, Settings(), force=body.force, log=lambda *_: None
+        )
+    except (FetchError, LearnError) as e:
+        raise HTTPException(
+            status_code=422, detail={"code": "cannot_learn", "message": str(e)}
+        ) from e
+    get_forms.cache_clear()
+    return LearnResult(form=FormSummary.model_validate(spec.model_dump()), report=report)

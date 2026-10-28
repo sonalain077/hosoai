@@ -29,5 +29,6 @@ class OpenAICompatibleClient:
         resp = self._client.chat.completions.create(
             model=model,
             messages=[m.model_dump() for m in messages],  # type: ignore[misc]
+            temperature=self._settings.llm_temperature,
         )
         return resp.choices[0].message.content or ""

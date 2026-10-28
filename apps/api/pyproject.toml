@@ -48,5 +48,5 @@ testpaths = ["tests"]
 
 [[tool.mypy.overrides]]
 # PyMuPDF ships without complete type hints.
-module = ["hosoai.forms.fill"]
+module = ["hosoai.forms.fill", "hosoai.forms.learn.*"]
 disallow_untyped_calls = false

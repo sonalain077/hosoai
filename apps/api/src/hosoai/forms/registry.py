@@ -43,6 +43,9 @@ def format_profile_value(field: FormField, profile: ProfileData) -> str:
         return ""
     keys = [field.profile_key, *field.extra_profile_keys]
     text = " / ".join(v for v in (_one(profile, k) for k in keys) if v)
+    if field.transform and text:
+        words = text.split()
+        text = words[0] if field.transform == "family_name" else " ".join(words[1:])
     return text.upper() if field.uppercase else text
 
 

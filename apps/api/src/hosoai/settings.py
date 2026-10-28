@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     llm_api_key: str = "ollama"
     llm_model: str = "qwen2.5:7b"
     llm_vision_model: str = "qwen2.5vl:7b"
+    llm_temperature: float = 0.0  # deterministic by default: same question, same answer
     database_url: str = "sqlite:///./hosoai.db"
     data_dir: Path = REPO_ROOT / "data"
     cors_origins: list[str] = ["http://localhost:3000"]

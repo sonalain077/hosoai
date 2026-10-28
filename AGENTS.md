@@ -88,7 +88,7 @@ cp .env.example .env
 ```bash
 LLM_BASE_URL=http://localhost:11434/v1
 LLM_API_KEY=ollama          # any value works with Ollama
-LLM_MODEL=qwen2.5:7b
+LLM_MODEL=qwen2.5:7b        # or qwen2.5:7b-16k: needs a 16k context, see README "Local model"
 LLM_VISION_MODEL=qwen2.5vl:7b
 ```
 

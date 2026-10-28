@@ -76,6 +76,13 @@ export function FormFiller({ detail }: { detail: FormDetail }) {
       </div>
 
       <div>
+        {spec.status === "draft" && (
+          <p className="mb-5 border-l-4 border-stamp bg-sheet py-3 pl-4 pr-3 text-sm">
+            <span className="font-semibold text-stamp">Bản nháp do trợ lý AI đọc.</span> Các ô
+            được tìm và kiểm tra vị trí tự động trên tệp chính thức, nhưng chưa có người duyệt.
+            Hãy so sánh kỹ bản xem trước với mẫu gốc.
+          </p>
+        )}
         <p className="text-sm text-muted">
           {fromProfile > 0
             ? `${fromProfile} mục đã điền sẵn từ hồ sơ cá nhân. Kiểm tra lại từng mục.`

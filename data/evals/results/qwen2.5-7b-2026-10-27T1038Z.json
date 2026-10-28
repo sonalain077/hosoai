@@ -1,0 +1,58 @@
+{
+  "model": "qwen2.5:7b",
+  "run": "2026-10-27T1038Z",
+  "summary": {
+    "form_learning": {
+      "CT01": {
+        "human_fields": 15,
+        "learned_fields": 8,
+        "human_fields_found": 9,
+        "profile_mappings_correct": "4/9",
+        "rounds": 4
+      },
+      "NA5": {
+        "human_fields": 21,
+        "learned_fields": 23,
+        "human_fields_found": 15,
+        "profile_mappings_correct": "6/8",
+        "rounds": 4
+      }
+    }
+  },
+  "details": {
+    "form_learning": [
+      {
+        "form": "CT01",
+        "human_fields": 15,
+        "learned_fields": 8,
+        "human_fields_found": 9,
+        "profile_mappings_correct": "4/9",
+        "rounds": 4,
+        "missed_labels": [
+          "Kính gửi",
+          "5. Số điện thoại liên hệ:",
+          "10. Nghề nghiệp,  nơi làm việc:",
+          "12. Quan hệ với chủ hộ:",
+          "13. Số định danh cá nhân/CMND của chủ hộ:",
+          "14. Nội dung đề nghị"
+        ]
+      },
+      {
+        "form": "NA5",
+        "human_fields": 21,
+        "learned_fields": 23,
+        "human_fields_found": 15,
+        "profile_mappings_correct": "6/8",
+        "rounds": 4,
+        "missed_labels": [
+          "2- Giới tính:",
+          "có giá trị đến ngày:",
+          "8- Nhập cảnh Việt Nam ngày:",
+          "qua cửa khẩu:",
+          "9- Được phép tạm trú đến ngày:",
+          "2- Gia hạn tạm trú đến ngày:"
+        ]
+      }
+    ]
+  }
+}

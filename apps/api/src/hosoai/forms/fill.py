@@ -20,6 +20,7 @@ import pymupdf
 from hosoai.forms.models import FormField, FormSpec
 
 FONT_SIZE = 10.5
+MIN_FONT_SIZE = 6.5
 INK = (0.12, 0.25, 0.65)  # ballpoint blue, so filled values are easy to review
 
 
@@ -135,6 +136,7 @@ def _boxes_after(page: pymupdf.Page, label: pymupdf.Rect) -> list[pymupdf.Rect]:
 def fill_pdf(spec: FormSpec, pdf: Path, font: Path, values: dict[str, str]) -> bytes:
     """Return the filled PDF. Unknown keys and empty values are ignored."""
     doc = pymupdf.open(pdf)
+    measure = pymupdf.Font(fontfile=str(font))
     by_key = {f.key: f for f in spec.fields}
     for key, raw in values.items():
         f = by_key.get(key)
@@ -172,10 +174,17 @@ def fill_pdf(spec: FormSpec, pdf: Path, font: Path, values: dict[str, str]) -> b
             hits = _same_line_after(page, anchor, label, label.x1)
             if not hits:
                 raise FieldNotFound(f"{f.key}: option {anchor!r} not found after label")
-            boxes = _boxes_after(page, hits[0])  # the ☐ is drawn, not a text character
+            # the box is either a text glyph (□) or drawn as a rectangle
+            glyphs = [
+                r
+                for g in ("□", "☐")
+                for r in _same_line_after(page, g, label, hits[0].x1)
+                if r.x0 - hits[0].x1 < 15
+            ]
+            boxes = glyphs or _boxes_after(page, hits[0])
             if not boxes:
                 raise FieldNotFound(f"{f.key}: no box after option {anchor!r}")
-            box = boxes[0]
+            box = min(boxes, key=lambda r: r.x0)
             write(box.x0 + box.width * 0.18, box.y1 - box.height * 0.15, "X")
             continue
 
@@ -204,10 +213,17 @@ def fill_pdf(spec: FormSpec, pdf: Path, font: Path, values: dict[str, str]) -> b
                 write(box.x0 + box.width * 0.3, box.y1 - box.height * 0.28, ch)
             continue
 
+        if f.fit_width:
+            needed = measure.text_length(value, fontsize=size)
+            if needed > f.fit_width:
+                size = max(MIN_FONT_SIZE, size * f.fit_width / needed)
+            # last resort: even the smallest size is too wide (visible in the preview)
+            while len(value) > 1 and measure.text_length(value, fontsize=size) > f.fit_width:
+                value = value[:-1]
         if f.below_x is not None:
-            write(f.below_x + 2, label.y1 + label.height - 2.5, value)
+            write(f.below_x + 2, label.y1 + label.height - 2.5, value, size=size)
         else:
-            write(label.x1 + f.x_offset + 4, label.y1 - 2.5, value)
+            write(label.x1 + f.x_offset + 4, label.y1 - 2.5, value, size=size)
     out: bytes = doc.tobytes(garbage=3, deflate=True)
     doc.close()
     return out

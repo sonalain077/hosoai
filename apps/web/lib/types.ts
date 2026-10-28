@@ -129,8 +129,28 @@ export type FormSpec = {
   fields: FormField[];
   notes: string[];
   preview_pages: number;
+  status: "reviewed" | "draft"; // draft = read by the form-learning agent, not yet human-reviewed
 };
 
 export type FormSummary = Pick<FormSpec, "id" | "code" | "title" | "procedure_slugs" | "source">;
+
+/** A form linked from the official procedure page, and whether we can fill it yet. */
+export type OfficialForm = {
+  index: number;
+  label: string;
+  url: string;
+  form_id: string | null;
+  status: "reviewed" | "draft" | null;
+};
+
+export type LearnResult = {
+  form: FormSummary;
+  report: {
+    rounds: number;
+    candidates: number;
+    accepted: string[];
+    rejected: Record<string, string>;
+  };
+};
 
 export type FormDetail = { spec: FormSpec; values: Record<string, string> };

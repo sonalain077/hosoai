@@ -1,0 +1,59 @@
+{
+  "model": "qwen2.5:7b-16k",
+  "run": "2026-10-28T0930Z",
+  "summary": {
+    "form_learning": {
+      "CT01": {
+        "human_fields": 15,
+        "learned_fields": 13,
+        "human_fields_found": 13,
+        "profile_mappings_correct": "9/9",
+        "wrong_profile_fills": 0,
+        "rounds": 4
+      },
+      "NA5": {
+        "human_fields": 21,
+        "learned_fields": 28,
+        "human_fields_found": 16,
+        "profile_mappings_correct": "8/8",
+        "wrong_profile_fills": 0,
+        "rounds": 2
+      }
+    }
+  },
+  "details": {
+    "form_learning": [
+      {
+        "form": "CT01",
+        "human_fields": 15,
+        "learned_fields": 13,
+        "human_fields_found": 13,
+        "profile_mappings_correct": "9/9",
+        "wrong_profile_fills": 0,
+        "rounds": 4,
+        "missed_labels": [
+          "Kính gửi",
+          "8. Nơi tạm trú:"
+        ],
+        "wrong_fills": []
+      },
+      {
+        "form": "NA5",
+        "human_fields": 21,
+        "learned_fields": 28,
+        "human_fields_found": 16,
+        "profile_mappings_correct": "8/8",
+        "wrong_profile_fills": 0,
+        "rounds": 2,
+        "missed_labels": [
+          "loại (2):",
+          "Cơ quan cấp:",
+          "qua cửa khẩu:",
+          "Mục đích nhập cảnh:",
+          "Contact telephone number/Email"
+        ],
+        "wrong_fills": []
+      }
+    ]
+  }
+}

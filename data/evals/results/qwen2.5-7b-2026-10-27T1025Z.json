@@ -1,0 +1,60 @@
+{
+  "model": "qwen2.5:7b",
+  "run": "2026-10-27T1025Z",
+  "summary": {
+    "form_learning": {
+      "CT01": {
+        "human_fields": 15,
+        "learned_fields": 9,
+        "human_fields_found": 8,
+        "profile_mappings_correct": "4/9",
+        "rounds": 3
+      },
+      "NA5": {
+        "human_fields": 21,
+        "learned_fields": 17,
+        "human_fields_found": 14,
+        "profile_mappings_correct": "4/8",
+        "rounds": 3
+      }
+    }
+  },
+  "details": {
+    "form_learning": [
+      {
+        "form": "CT01",
+        "human_fields": 15,
+        "learned_fields": 9,
+        "human_fields_found": 8,
+        "profile_mappings_correct": "4/9",
+        "rounds": 3,
+        "missed_labels": [
+          "Kính gửi",
+          "1. Họ, chữ đệm và tên:",
+          "4. Số định danh cá nhân/CMND:",
+          "10. Nghề nghiệp,  nơi làm việc:",
+          "11. Họ, chữ đệm và tên chủ hộ:",
+          "12. Quan hệ với chủ hộ:",
+          "13. Số định danh cá nhân/CMND của chủ hộ:"
+        ]
+      },
+      {
+        "form": "NA5",
+        "human_fields": 21,
+        "learned_fields": 17,
+        "human_fields_found": 14,
+        "profile_mappings_correct": "4/8",
+        "rounds": 3,
+        "missed_labels": [
+          "2- Giới tính:",
+          "loại (2):",
+          "Cơ quan cấp:",
+          "có giá trị đến ngày:",
+          "qua cửa khẩu:",
+          "Mục đích nhập cảnh:",
+          "2- Gia hạn tạm trú đến ngày:"
+        ]
+      }
+    ]
+  }
+}

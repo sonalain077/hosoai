@@ -1,7 +1,7 @@
 """Run the evals against the configured model (LLM_* env vars; Ollama by default).
 
     uv run python -m hosoai.evals.run                 # all parts
-    uv run python -m hosoai.evals.run --part routing  # routing | fees | agent
+    uv run python -m hosoai.evals.run --part routing  # routing | fees | agent | forms
 
 Writes data/evals/results/<model>-<date>.json and .md. Calls a real model: never run in CI.
 """
@@ -136,6 +136,81 @@ def run_agent(
     return out
 
 
+def run_forms(llm: LLMClient, model_name: str) -> list[dict[str, Any]]:
+    """Re-learn the human-reviewed forms and compare with the reviewed specs."""
+    import unicodedata
+
+    from hosoai.forms.learn.agent import learn
+    from hosoai.forms.registry import FormRegistry
+
+    def norm(t: str) -> str:
+        t = unicodedata.normalize("NFC", t).replace("\xa0", " ")
+        return re.sub(r"\s+", " ", t).strip(" :-").lower()
+
+    settings = Settings()
+    registry = FormRegistry(settings.data_dir / "forms")
+    rows = []
+    for summary in registry.list():
+        human = registry.get(summary.id)
+        if human is None or human.status != "reviewed":
+            continue
+        learned, report = learn(
+            form_id=f"{human.id}-relearn",
+            code=human.code,
+            title=human.title,
+            procedure_slugs=human.procedure_slugs,
+            pdf=registry.pdf_path(human),
+            original_file=None,
+            source=human.source,
+            font=settings.data_dir / "fonts" / "DejaVuSans.ttf",
+            llm=llm,
+            model_name=model_name,
+            log=lambda *_: None,
+        )
+
+        def match(label: str, page: int, fields: Any = learned.fields) -> Any:
+            for f in fields:
+                a, b = norm(f.label), norm(label)
+                # prefix, not substring: "1. họ tên" must not match "11. họ tên chủ hộ"
+                same = a.startswith(b) or b.startswith(a)
+                if f.page == page and same and min(len(a), len(b)) >= 4:
+                    return f
+            return None
+
+        found = mapped = with_profile = 0
+        misses: list[str] = []
+        wrong: list[str] = []  # filled from the profile with a value that does not belong
+        for hf in human.fields:
+            lf = match(hf.label, hf.page)
+            if lf is not None:
+                found += 1
+                if lf.profile_key and lf.profile_key != hf.profile_key:
+                    wrong.append(f"{hf.label} <- {lf.profile_key}")
+            else:
+                misses.append(hf.label)
+            if hf.profile_key:
+                with_profile += 1
+                mapped += lf is not None and lf.profile_key == hf.profile_key
+        row = {
+            "form": human.code,
+            "human_fields": len(human.fields),
+            "learned_fields": len(learned.fields),
+            "human_fields_found": found,
+            "profile_mappings_correct": f"{mapped}/{with_profile}",
+            "wrong_profile_fills": len(wrong),
+            "rounds": report.rounds,
+            "missed_labels": misses,
+            "wrong_fills": wrong,
+        }
+        print(
+            f"  {human.code}: found {found}/{len(human.fields)} human fields, "
+            f"profile mapping {mapped}/{with_profile}, wrong fills {len(wrong)}, "
+            f"rounds {report.rounds}"
+        )
+        rows.append(row)
+    return rows
+
+
 def summarize_agent(rows: list[dict[str, Any]]) -> dict[str, object]:
     events: dict[str, int] = {}
     for r in rows:
@@ -171,7 +246,7 @@ def to_markdown(model: str, when: str, summary: dict[str, Any]) -> str:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--part", choices=["routing", "fees", "agent", "all"], default="all")
+    ap.add_argument("--part", choices=["routing", "fees", "agent", "forms", "all"], default="all")
     ap.add_argument("--limit", type=int, default=None, help="only the first N cases")
     args = ap.parse_args()
 
@@ -199,6 +274,17 @@ def main() -> None:
         a = run_agent(in_scope, store, llm)
         summary["agent"] = summarize_agent(a)
         details["agent"] = a
+
+    if args.part in ("forms", "all"):
+        print("Form learning vs human-reviewed specs:")
+        rows = run_forms(llm, settings.llm_model)
+        summary["form_learning"] = {
+            r["form"]: {
+                k: v for k, v in r.items() if k not in ("form", "missed_labels", "wrong_fills")
+            }
+            for r in rows
+        }
+        details["form_learning"] = rows
 
     out_dir = settings.data_dir / "evals" / "results"
     out_dir.mkdir(parents=True, exist_ok=True)
