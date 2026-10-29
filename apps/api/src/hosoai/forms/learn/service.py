@@ -11,6 +11,7 @@ import pymupdf
 
 from hosoai.forms.learn.agent import LearnReport, learn
 from hosoai.forms.learn.fetch import download, form_code, form_title, to_pdf
+from hosoai.forms.learn.scanned import is_scanned, learn_scanned
 from hosoai.forms.models import FormSpec
 from hosoai.llm import LLMClient
 from hosoai.procedures.models import Procedure
@@ -66,25 +67,40 @@ def learn_procedure_form(
             if not force:
                 raise LearnError(f"{fid} already exists")
         log(f"Form {code}: {title}")
-        spec, report = learn(
-            form_id=fid,
-            code=code,
-            title=title,
-            procedure_slugs=[p.slug],
-            pdf=pdf,
-            original_file=original.name,
-            source=Source(
-                url=link.url,
-                title=f"{title} (Mẫu {code})",
-                document_number=f"Mẫu {code}",
-                publisher=p.source.publisher,
-                retrieved_at=datetime.now(UTC),
-            ),
-            font=settings.data_dir / "fonts" / "DejaVuSans.ttf",
-            llm=llm,
-            model_name=settings.llm_model,
-            log=log,
+        source = Source(
+            url=link.url,
+            title=f"{title} (Mẫu {code})",
+            document_number=f"Mẫu {code}",
+            publisher=p.source.publisher,
+            retrieved_at=datetime.now(UTC),
         )
+        if is_scanned(doc):  # image-only: the vision model finds the blanks
+            spec, report = learn_scanned(
+                form_id=fid,
+                code=code,
+                title=title,
+                procedure_slugs=[p.slug],
+                pdf=pdf,
+                original_file=original.name,
+                source=source,
+                llm=llm,
+                model_name=settings.llm_vision_model,
+                log=log,
+            )
+        else:
+            spec, report = learn(
+                form_id=fid,
+                code=code,
+                title=title,
+                procedure_slugs=[p.slug],
+                pdf=pdf,
+                original_file=original.name,
+                source=source,
+                font=settings.data_dir / "fonts" / "DejaVuSans.ttf",
+                llm=llm,
+                model_name=settings.llm_model,
+                log=log,
+            )
         if not spec.fields:
             raise LearnError("the agent could not find any field that passes the checks")
         (tmp / "form.json").write_text(spec.model_dump_json(indent=2), "utf-8")

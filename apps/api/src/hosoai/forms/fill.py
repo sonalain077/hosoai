@@ -1,6 +1,6 @@
 """Write values onto an official form PDF.
 
-Three ways, picked per field:
+Picked per field:
 - acroform:    the PDF has real form fields; set them by name.
 - after_label: text PDF with a printed label followed by a dotted line; write after the label.
 - boxes:       one character per printed box (e.g. the 12-digit ID number). Boxes may be
@@ -8,8 +8,8 @@ Three ways, picked per field:
 - date_parts:  "dd/mm/yyyy" written around separators printed after the label
                ("/" or words like "tháng", "năm").
 - choice:      tick (X) the printed option matching the value, e.g. "Nam" / "Nữ".
-Scanned (image-only) forms would need the vision model to find boxes; none of our forms
-need that yet.
+- region:      scanned (image-only) forms: write inside a box found by the vision model
+               (forms/learn/scanned.py) and checked by code.
 """
 
 import unicodedata
@@ -155,6 +155,41 @@ def fill_pdf(spec: FormSpec, pdf: Path, font: Path, values: dict[str, str]) -> b
                 raise FieldNotFound(f"{f.key}: widget {f.widget!r} not found")
             widget.field_value = value
             widget.update()
+            continue
+
+        if f.mode == "region":
+            if f.rect is None:
+                raise FieldNotFound(f"{f.key}: region field without a box")
+            pieces = value.split("/")
+            if f.parts and len(pieces) == len(f.parts):  # day, month, year in their boxes
+                for cell, piece in zip(f.parts, pieces, strict=True):
+                    r = pymupdf.Rect(cell)
+                    page.insert_text(
+                        (r.x0 + 2, r.y1 - 2),
+                        piece.strip(),
+                        fontsize=min(FONT_SIZE, r.height * 0.75),
+                        fontfile=str(font),
+                        fontname="vi",
+                        color=INK,
+                    )
+                continue
+            box = pymupdf.Rect(f.parts[0] if f.parts else f.rect)
+            size = min(f.font_size or FONT_SIZE, box.height * 0.75)
+            room = box.width - 4
+            needed = measure.text_length(value, fontsize=size)
+            if needed > room:
+                size = max(MIN_FONT_SIZE, size * room / needed)
+            while len(value) > 1 and measure.text_length(value, fontsize=size) > room:
+                value = value[:-1]  # last resort, visible in the preview
+            baseline = box.y1 - max(1.5, (box.height - size) / 2)
+            page.insert_text(
+                (box.x0 + 2, baseline),
+                value,
+                fontsize=size,
+                fontfile=str(font),
+                fontname="vi",
+                color=INK,
+            )
             continue
 
         label = _label_rect(page, f)

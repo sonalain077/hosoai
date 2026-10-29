@@ -116,7 +116,7 @@ export type FormField = {
   hint: string | null; // our own short gloss, not official text
   profile_key: keyof Profile | null;
   page: number;
-  mode: "after_label" | "boxes" | "acroform";
+  mode: "after_label" | "boxes" | "date_parts" | "choice" | "acroform" | "region";
   max_chars: number | null;
 };
 

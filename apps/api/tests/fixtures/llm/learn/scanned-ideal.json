@@ -1,0 +1,13 @@
+{
+  "_note": "7 label reads by the vision model, then one decision by the chat model. Fake labels, no personal data.",
+  "replies": [
+    "1. Họ và tên:",
+    "2. Số định danh cá nhân:",
+    "3. Nơi thường trú:",
+    "4. Số điện thoại:",
+    "5. Họ tên của cha:",
+    "6. Lý do đề nghị:",
+    "7. Ngày cấp:",
+    "{\"fields\": [{\"c\": \"L1\", \"key\": \"full_name\", \"profile\": \"full_name\", \"upper\": false, \"hint\": \"Full name\"}, {\"c\": \"L2\", \"key\": \"id_number\", \"profile\": \"id_number\", \"upper\": false, \"hint\": \"Personal ID number\"}, {\"c\": \"L3\", \"key\": \"permanent_address\", \"profile\": \"permanent_address\", \"upper\": false, \"hint\": \"Permanent address\"}, {\"c\": \"L4\", \"key\": \"phone\", \"profile\": \"phone\", \"upper\": false, \"hint\": \"Phone number\"}, {\"c\": \"L5\", \"key\": \"father_name\", \"profile\": null, \"upper\": false, \"hint\": \"Father's full name\"}, {\"c\": \"L6\", \"key\": \"reason\", \"profile\": null, \"upper\": false, \"hint\": \"Reason for the request\"}, {\"c\": \"L7\", \"key\": \"id_issue_date\", \"profile\": null, \"upper\": false, \"hint\": \"Date the ID was issued\"}], \"skip\": []}"
+  ]
+}

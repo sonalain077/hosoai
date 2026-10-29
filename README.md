@@ -54,7 +54,7 @@ Run it yourself (calls the configured model, roughly 5 minutes on Ollama):
 
 ```bash
 cd apps/api
-uv run python -m hosoai.evals.run            # or --part routing|fees|agent
+uv run python -m hosoai.evals.run            # or --part routing|fees|agent|forms|scanned
 ```
 
 Results are written to `data/evals/results/<model>-<date>.json` and `.md`. Scoring logic is unit-tested in `tests/test_evals.py`.
@@ -104,6 +104,17 @@ Before the label checks below, the same model got 3–4 / 9 on CT01: it often sh
 The 7B model still sometimes skips a blank the applicant should fill in (an issue date, the purpose of entry). Learned forms stay drafts until a human reviews them. Switching to a stronger model is a `.env` change.
 
 Some portal links (newer `/tttl/...` paths) answer scripts with 403. Download the file in a browser and learn it from disk: `uv run python -m hosoai.forms.learn --procedure <slug> --form <i> --file <path>`. The source stays the official URL.
+
+## Scanned forms
+
+Some offices only publish a scanned image of a form. Those have no text layer, so code can't search for labels. The app handles them the same way as text forms: code owns the geometry and the models only read and decide.
+
+1. **Code finds every writing line** on the page image: a thin run of dots or an underline, with empty space above and below it. A label printed on the line splits it (`Cơ quan cấp: …… có giá trị đến ngày: ……` gives two lines). Cells of digit boxes and tables are left out. A date printed as `…/…/…` or `… tháng … năm …` becomes one field with a box per part.
+2. **The vision model only reads.** For each line it gets a small crop of the label printed before it (or above it) and copies the text. It is never asked for coordinates. In our first try the local 7B vision model placed its own boxes and drifted by up to three lines down the page.
+3. **The chat model decides** which lines the applicant fills in and links them to the profile. It uses the same prompt and the same label checks as text forms, so a line about the father or a sponsor never takes the applicant's data.
+4. The result is saved as a **draft** with `mode: "region"` fields. The form page says the labels were read from an image by AI.
+
+A PDF with no text layer is sent to this path automatically (`forms/learn/scanned.py`). To measure it, `--part scanned` turns the human-reviewed CT01 and NA5 into images, learns them as scans, and checks each field against the reviewed spec, position included.
 
 ## Architecture
 
@@ -255,7 +266,7 @@ Review `data/forms/<id>/form.json`: check labels, profile links and hints agains
 
 - The local 7B model sometimes asks clumsy questions or over-uses the original request as a reason. Stronger models do noticeably better. Every reason shown is a quote of the user's own words, so mistakes stay visible.
 - Learned forms are drafts: placement is checked by code, but the meaning of each field needs a human review, especially with a small model.
-- Scanned (image-only) forms are not supported yet. They would need the vision model to find fields, and every form linked so far is a text document.
+- Scanned (image-only) forms: dotted lines and underlines are supported. Digit boxes and tick boxes on a scan are not detected yet, so those fields are left for the user to fill by hand. Every official form linked so far is a text document, so this path was tested on official forms turned into images.
 - Some portals don't serve the file itself (Lào Cai shows a viewer page; some Bộ Công an links answer "Access Denied"). The agent refuses those instead of guessing.
 - One local user. Sessions live in memory and the profile in a local SQLite file.
 - Official sources can lag behind new laws. The app shows what the portal publishes, plus any known warnings, and asks users to check with the receiving office before filing.

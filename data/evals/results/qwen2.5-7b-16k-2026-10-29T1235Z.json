@@ -1,0 +1,302 @@
+{
+  "model": "qwen2.5:7b-16k",
+  "run": "2026-10-29T1235Z",
+  "summary": {
+    "scanned_forms": {
+      "CT01": {
+        "human_line_fields": 13,
+        "placed_on_the_right_line": 12,
+        "profile_mappings_correct": "8/8",
+        "wrong_profile_fills": 1,
+        "digit_or_tick_box_fields_not_supported": 2,
+        "learned_fields": 18,
+        "seconds": 331
+      },
+      "NA5": {
+        "human_line_fields": 20,
+        "placed_on_the_right_line": 20,
+        "profile_mappings_correct": "7/7",
+        "wrong_profile_fills": 0,
+        "digit_or_tick_box_fields_not_supported": 1,
+        "learned_fields": 30,
+        "seconds": 370
+      }
+    }
+  },
+  "details": {
+    "scanned_forms": [
+      {
+        "form": "CT01",
+        "human_line_fields": 13,
+        "placed_on_the_right_line": 12,
+        "profile_mappings_correct": "8/8",
+        "wrong_profile_fills": 1,
+        "digit_or_tick_box_fields_not_supported": 2,
+        "learned_fields": 18,
+        "seconds": 331,
+        "missed_labels": [
+          "Kính gửi"
+        ],
+        "wrong_fills": [
+          "8. Nơi tạm trú: <- current_address"
+        ],
+        "learned": [
+          {
+            "key": "full_name",
+            "label": "1. Họ, chữ đệm và tên:",
+            "profile": "full_name"
+          },
+          {
+            "key": "date_of_birth",
+            "label": "2. Ngày, tháng, năm sinh:",
+            "profile": "date_of_birth"
+          },
+          {
+            "key": "sex",
+            "label": "3. Giới tính:",
+            "profile": "sex"
+          },
+          {
+            "key": "phone",
+            "label": "5. Số điện thoại liên hệ:",
+            "profile": "phone"
+          },
+          {
+            "key": "email",
+            "label": "6. Email:",
+            "profile": "email"
+          },
+          {
+            "key": "permanent_address",
+            "label": "7. Nơi thường trú:",
+            "profile": "permanent_address"
+          },
+          {
+            "key": "current_address",
+            "label": "8. Nơi tạm trú:",
+            "profile": "current_address"
+          },
+          {
+            "key": "occupation",
+            "label": "9. Nơi ở hiện tại:",
+            "profile": "current_address"
+          },
+          {
+            "key": "work_occupation",
+            "label": "10. Nghề nghiệp, nơi làm việc:",
+            "profile": "occupation"
+          },
+          {
+            "key": "head_of_household_name",
+            "label": "11. Họ, chữ đệm và tên chủ hộ:",
+            "profile": null
+          },
+          {
+            "key": "head_of_household_relationship",
+            "label": "11. Họ, chữ đệm và tên chủ hộ:...........................................12. Quan hệ với chủ hộ:",
+            "profile": null
+          },
+          {
+            "key": "change_content",
+            "label": "14. Nội dung đề nghị(2):",
+            "profile": null
+          },
+          {
+            "key": "change_content_2",
+            "label": "14. Nội dung đề nghị(2):.......................................................",
+            "profile": null
+          },
+          {
+            "key": "gender",
+            "label": "3. Giới tính:",
+            "profile": "sex"
+          },
+          {
+            "key": "sign_day",
+            "label": "ngày.",
+            "profile": null
+          },
+          {
+            "key": "sign_month_year_1",
+            "label": "tháng....năm... .......,ngày.",
+            "profile": null
+          },
+          {
+            "key": "sign_month_year_2",
+            "label": "tháng...năm... ....,ngày.",
+            "profile": null
+          },
+          {
+            "key": "sign_month_year_3",
+            "label": "tháng...năm...",
+            "profile": null
+          }
+        ]
+      },
+      {
+        "form": "NA5",
+        "human_line_fields": 20,
+        "placed_on_the_right_line": 20,
+        "profile_mappings_correct": "7/7",
+        "wrong_profile_fills": 0,
+        "digit_or_tick_box_fields_not_supported": 1,
+        "learned_fields": 30,
+        "seconds": 370,
+        "missed_labels": [],
+        "wrong_fills": [],
+        "learned": [
+          {
+            "key": "full_name",
+            "label": "1- Họ tên (chữ in hoa):",
+            "profile": "full_name"
+          },
+          {
+            "key": "sex",
+            "label": "2- Giới tính: Nam ☐ Nữ☐ 3- Sinh ngày:",
+            "profile": "date_of_birth"
+          },
+          {
+            "key": "original_nationality",
+            "label": "4- Quốc tịch gốc:",
+            "profile": null
+          },
+          {
+            "key": "current_nationality",
+            "label": "5- Quốc tịch hiện nay:",
+            "profile": "nationality"
+          },
+          {
+            "key": "occupation",
+            "label": "6- Nghề nghiệp/chức vụ:",
+            "profile": "occupation"
+          },
+          {
+            "key": "passport_number",
+            "label": "7- Hộ chiếu/giấy tờ có giá trị đi lại quốc tế số:",
+            "profile": "passport_number"
+          },
+          {
+            "key": "visa_type",
+            "label": "loại (2):",
+            "profile": null
+          },
+          {
+            "key": "visa_type_details",
+            "label": ".",
+            "profile": null
+          },
+          {
+            "key": "temporary_stay_until",
+            "label": "có giá trị đến ngày:",
+            "profile": null
+          },
+          {
+            "key": "entry_date",
+            "label": "8- Nhập cảnh Việt Nam ngày:",
+            "profile": null
+          },
+          {
+            "key": "border_gate",
+            "label": "qua cửa khẩu:",
+            "profile": null
+          },
+          {
+            "key": "purpose_of_entry",
+            "label": "Mục đích nhập cảnh:",
+            "profile": null
+          },
+          {
+            "key": "temporary_stay_until_2",
+            "label": "9- Được phép tạm trú đến ngày:",
+            "profile": null
+          },
+          {
+            "key": "temporary_residence_address",
+            "label": "- Địa chỉ tạm trú tại Việt Nam:",
+            "profile": "current_address"
+          },
+          {
+            "key": "contact_phone_or_email",
+            "label": "- Điện thoại liên hệ/Email.",
+            "profile": "phone"
+          },
+          {
+            "key": "hosting_organisation_name",
+            "label": "1- Tên cơ quan, tổ chức Name of hosting organisation:",
+            "profile": null
+          },
+          {
+            "key": "hosting_organisation_address",
+            "label": "Địa chỉ Address",
+            "profile": null
+          },
+          {
+            "key": "hosting_organisation_contact",
+            "label": "Điện thoại liên hệ/Email Contact telephone number/Email",
+            "profile": null
+          },
+          {
+            "key": "sponsor_name",
+            "label": "2- Thân nhân bảo lãnh (Họ tên):",
+            "profile": null
+          },
+          {
+            "key": "sponsor_date_of_birth",
+            "label": "Sinh ngày.",
+            "profile": null
+          },
+          {
+            "key": "sponsor_id_number",
+            "label": "Giấy chứng minh nhân dân/hộ chiếu/thẻ thường trú/thẻ tạm trú số:",
+            "profile": null
+          },
+          {
+            "key": "sponsor_issue_date",
+            "label": "Cấp ngày:",
+            "profile": null
+          },
+          {
+            "key": "sponsor_issuing_authority",
+            "label": "cơ quan cấp:",
+            "profile": null
+          },
+          {
+            "key": "sponsor_relationship",
+            "label": "Quan hệ với người đề nghị:",
+            "profile": null
+          },
+          {
+            "key": "sponsor_residence_address",
+            "label": "Địa chỉ thường trú/tạm trú tại Việt Nam:",
+            "profile": null
+          },
+          {
+            "key": "sponsor_contact",
+            "label": "Điện thoại liên hệ/Email:",
+            "profile": null
+          },
+          {
+            "key": "visa_type_2",
+            "label": "1- Cấp thị thực: một lần ☐ nhiều lần ☐ có giá trị đến ngày:",
+            "profile": null
+          },
+          {
+            "key": "renewal_date",
+            "label": "2- Gia hạn tạm trú đến ngày:",
+            "profile": null
+          },
+          {
+            "key": "reasons",
+            "label": "3- Lý do Reason(s)",
+            "profile": null
+          },
+          {
+            "key": "statements",
+            "label": "statements:",
+            "profile": null
+          }
+        ]
+      }
+    ]
+  }
+}

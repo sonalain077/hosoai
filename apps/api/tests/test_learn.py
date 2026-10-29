@@ -161,7 +161,7 @@ def test_label_tells_which_profile_value_goes_where() -> None:
 
 
 def test_sub_fields_belong_to_the_person_of_their_item() -> None:
-    f = _facts_by_label("cco1", "form.pdf")
+    f = _facts_by_label("cc01", "form.pdf")
     # "17. Họ tên của cha … Quốc tịch … Số CCCD": all about the father
     assert all(x.other for x in f["Quốc tịch:"])
     assert all(x.other for x in f["Số CCCD/CMND"])

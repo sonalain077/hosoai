@@ -1,7 +1,7 @@
 """Run the evals against the configured model (LLM_* env vars; Ollama by default).
 
     uv run python -m hosoai.evals.run                 # all parts
-    uv run python -m hosoai.evals.run --part routing  # routing | fees | agent | forms
+    uv run python -m hosoai.evals.run --part routing  # routing | fees | agent | forms | scanned
 
 Writes data/evals/results/<model>-<date>.json and .md. Calls a real model: never run in CI.
 """
@@ -9,6 +9,7 @@ Writes data/evals/results/<model>-<date>.json and .md. Calls a real model: never
 import argparse
 import json
 import re
+import time
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -211,6 +212,115 @@ def run_forms(llm: LLMClient, model_name: str) -> list[dict[str, Any]]:
     return rows
 
 
+def rasterize(pdf: Path, out: Path, dpi: int = 150) -> Path:
+    """An image-only copy of a PDF, like a scan: no text layer left."""
+    import pymupdf
+
+    src = pymupdf.open(pdf)
+    scan = pymupdf.open()
+    for page in (src[i] for i in range(len(src))):
+        pix = page.get_pixmap(dpi=dpi, colorspace=pymupdf.csGRAY)
+        new = scan.new_page(width=page.rect.width, height=page.rect.height)
+        new.insert_image(new.rect, stream=pix.tobytes("png"))
+    scan.save(out)
+    return out
+
+
+def run_scanned(llm: LLMClient, model_name: str) -> list[dict[str, Any]]:
+    """Scan (rasterize) the human-reviewed forms, learn them as images, compare.
+
+    A human field is "placed" when the learned box covers the point where the reviewed
+    spec writes its value. Digit boxes and tick boxes are not detected on scans yet and
+    are counted apart.
+    """
+    import tempfile
+
+    import pymupdf
+
+    from hosoai.forms.fill import _label_rect
+    from hosoai.forms.learn.scanned import learn_scanned
+    from hosoai.forms.registry import FormRegistry
+
+    settings = Settings()
+    registry = FormRegistry(settings.data_dir / "forms")
+    rows = []
+    for summary in registry.list():
+        human = registry.get(summary.id)
+        if human is None or human.status != "reviewed":
+            continue
+        with tempfile.TemporaryDirectory() as tmp:
+            scan = rasterize(registry.pdf_path(human), Path(tmp) / "scan.pdf")
+            t0 = time.time()
+            learned, report = learn_scanned(
+                form_id=f"{human.id}-scan",
+                code=human.code,
+                title=human.title,
+                procedure_slugs=human.procedure_slugs,
+                pdf=scan,
+                original_file=None,
+                source=human.source,
+                llm=llm,
+                model_name=model_name,
+                log=lambda *_: None,
+            )
+            seconds = round(time.time() - t0)
+        doc = pymupdf.open(registry.pdf_path(human))
+        lines = placed = mapped = with_profile = 0
+        wrong: list[str] = []
+        misses: list[str] = []
+        other_modes = 0
+        for hf in human.fields:
+            if hf.mode not in ("after_label", "date_parts"):
+                other_modes += 1
+                continue
+            lines += 1
+            r = _label_rect(doc[hf.page], hf)
+            if hf.below_x is not None:
+                x, y = hf.below_x + 2, r.y1 + r.height - 4
+            else:
+                x, y = r.x1 + hf.x_offset + 6, r.y1 - 4
+            lf = next(
+                (
+                    f
+                    for f in learned.fields
+                    if f.page == hf.page
+                    and f.rect is not None
+                    and (pymupdf.Rect(f.rect) + (-4, -4, 4, 4)).contains(pymupdf.Point(x, y))
+                ),
+                None,
+            )
+            if lf is None:
+                misses.append(hf.label)
+            else:
+                placed += 1
+                if lf.profile_key and lf.profile_key != hf.profile_key:
+                    wrong.append(f"{hf.label} <- {lf.profile_key}")
+            if hf.profile_key:
+                with_profile += 1
+                mapped += lf is not None and lf.profile_key == hf.profile_key
+        row = {
+            "form": human.code,
+            "human_line_fields": lines,
+            "placed_on_the_right_line": placed,
+            "profile_mappings_correct": f"{mapped}/{with_profile}",
+            "wrong_profile_fills": len(wrong),
+            "digit_or_tick_box_fields_not_supported": other_modes,
+            "learned_fields": len(learned.fields),
+            "seconds": seconds,
+            "missed_labels": misses,
+            "wrong_fills": wrong,
+            "learned": [
+                {"key": f.key, "label": f.label, "profile": f.profile_key} for f in learned.fields
+            ],
+        }
+        print(
+            f"  {human.code} (scanned): placed {placed}/{lines}, profile {mapped}/{with_profile}, "
+            f"wrong fills {len(wrong)}, {seconds}s"
+        )
+        rows.append(row)
+    return rows
+
+
 def summarize_agent(rows: list[dict[str, Any]]) -> dict[str, object]:
     events: dict[str, int] = {}
     for r in rows:
@@ -246,7 +356,9 @@ def to_markdown(model: str, when: str, summary: dict[str, Any]) -> str:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--part", choices=["routing", "fees", "agent", "forms", "all"], default="all")
+    ap.add_argument(
+        "--part", choices=["routing", "fees", "agent", "forms", "scanned", "all"], default="all"
+    )
     ap.add_argument("--limit", type=int, default=None, help="only the first N cases")
     args = ap.parse_args()
 
@@ -285,6 +397,19 @@ def main() -> None:
             for r in rows
         }
         details["form_learning"] = rows
+
+    if args.part in ("scanned", "all"):
+        print("Scanned forms (vision) vs human-reviewed specs:")
+        rows = run_scanned(llm, f"{settings.llm_vision_model} + {settings.llm_model}")
+        summary["scanned_forms"] = {
+            r["form"]: {
+                k: v
+                for k, v in r.items()
+                if k not in ("form", "missed_labels", "wrong_fills", "learned")
+            }
+            for r in rows
+        }
+        details["scanned_forms"] = rows
 
     out_dir = settings.data_dir / "evals" / "results"
     out_dir.mkdir(parents=True, exist_ok=True)

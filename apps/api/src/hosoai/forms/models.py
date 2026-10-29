@@ -32,7 +32,9 @@ class FormField(BaseModel):
     profile_key: ProfileKey | None = None
     page: int = 0
     occurrence: int = 0  # which match of `label` on the page (0 = first)
-    mode: Literal["after_label", "boxes", "date_parts", "choice", "acroform"] = "after_label"
+    mode: Literal["after_label", "boxes", "date_parts", "choice", "acroform", "region"] = (
+        "after_label"
+    )
     separators: list[str] = ["/", "/"]  # date_parts: printed words between day, month, year
     choices: dict[str, str] | None = None  # choice: value -> printed option to tick
     uppercase: bool = False  # the form asks for capital letters
@@ -47,6 +49,11 @@ class FormField(BaseModel):
     from_procedure_title: bool = False  # prefill with the official title of the procedure
     fit_width: float | None = None  # shrink the text (down to MIN_FONT_SIZE) to fit this width
     below_x: float | None = None  # dotted line is on the next line, starting at this x (pt)
+    # region: scanned forms have no text to search, so we write inside this box
+    # (x0, y0, x1, y1 in PDF points), found by the vision model and checked by code
+    rect: tuple[float, float, float, float] | None = None
+    # region: a date printed as "…/…/…" or "… tháng … năm …": one box per part
+    parts: list[tuple[float, float, float, float]] = []
 
 
 class FormSpec(BaseModel):
